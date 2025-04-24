@@ -9,61 +9,62 @@ def ramp_val(val, t0, t1, t):
         return val * (t - t0) / (t1 - t0)
     return 0
 
+# those are example functions. they must be evaluated according to real data
 def children_prob(t):
     val = (
-        ramp_val(1, 6,7.5,t)+\
-        const_val(1,7.5,8.5,t)+\
-        (const_val(1,8.5,9,t)-ramp_val(1, 8.5,9.1,t))+\
+        ramp_val(0.7, 6,7.5,t)+\
+        const_val(0.7,7.5,8.5,t)+\
+        (const_val(0.7,8.5,9,t)-ramp_val(0.7, 8.5,9.1,t))+\
 
-        const_val(0.2,9,12,t)+\
+        const_val(0.3,9,12,t)+\
 
-        ramp_val(1, 12,12.5,t)+\
-        const_val(1,12.5,14,t)+\
-        (const_val(1,14,15,t)-ramp_val(1, 14,15,t))+\
+        ramp_val(0.7, 12,12.5,t)+\
+        const_val(0.7,12.5,14,t)+\
+        (const_val(0.7,14,15,t)-ramp_val(0.7, 14,15,t))+\
 
-        const_val(0.2,15,20,t)
+        const_val(0.3,15,20,t)
     )
-    return max(0.02,val) # smoothing
+    return max(0,val) # smoothing
 
 def guys_prob(t):
     val = (
-        0.2+\
-        ramp_val(0.8, 6,7.5,t)+\
-        const_val(0.8,7.5,22,t)+\
-        (const_val(0.8,22,24,t)-ramp_val(0.8, 22,24,t)) 
+        0.3+\
+        ramp_val(0.4, 6,7.5,t)+\
+        const_val(0.4,7.5,22,t)+\
+        (const_val(0.4,22,24,t)-ramp_val(0.4, 22,24,t)) 
     )
-    return max(0.1,val) # smoothing
+    return max(0.2,val) # smoothing
 
 def man_prob(t):
     val = (
-        ramp_val(1, 6,7.5,t)+\
-        const_val(1,7.5,8.5,t)+\
-        (const_val(1,8.5,9,t)-ramp_val(1, 8.5,9.1,t))+\
+        ramp_val(0.7, 6,7.5,t)+\
+        const_val(0.7,7.5,8.5,t)+\
+        (const_val(0.7,8.5,9,t)-ramp_val(0.7, 8.5,9.1,t))+\
 
-        const_val(0.2,9,15.6,t)+\
+        const_val(0.3,9,15.6,t)+\
 
-        ramp_val(1, 15.5,16,t)+\
-        const_val(1,16,19,t)+\
-        (const_val(1,19,20,t)-ramp_val(1, 19,20.1,t))+\
+        ramp_val(0.7, 15.5,16,t)+\
+        const_val(0.7,16,19,t)+\
+        (const_val(0.7,19,20,t)-ramp_val(0.7, 19,20.1,t))+\
 
-        const_val(0.2,20,24,t)
+        const_val(0.3,20,24,t)
     )
-    return max(0.1,val) # smoothing
+    return max(0.2,val) # smoothing
 
 def woman_prob(t):
     val = (
         0.1+
-        ramp_val(0.9, 6,7.5,t)+\
-        const_val(0.9,7.5,8.5,t)+\
-        (const_val(0.9,8.5,9,t)-ramp_val(0.9, 8.5,9.1,t))+\
+        ramp_val(0.7, 6,7.5,t)+\
+        const_val(0.7,7.5,8.5,t)+\
+        (const_val(0.7,8.5,9,t)-ramp_val(0.7, 8.5,9.1,t))+\
 
-        const_val(0.2,9,12,t)+\
+        const_val(0.3,9,12,t)+\
 
-        ramp_val(0.9, 12,12.5,t)+\
-        const_val(0.9,12.5,14,t)+\
-        (const_val(0.9,14,15,t)-ramp_val(0.9, 14,15,t))+\
+        ramp_val(0.7, 12,12.5,t)+\
+        const_val(0.7,12.5,14,t)+\
+        (const_val(0.7,14,15,t)-ramp_val(0.7, 14,15,t))+\
 
-        const_val(0.1,15,20,t)
+        const_val(0.3,15,20,t)
     )
     return max(0.1,val) # smoothing
 
