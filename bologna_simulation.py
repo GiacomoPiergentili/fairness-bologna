@@ -269,6 +269,34 @@ def plot_map_folium(
 
     return m
 
+def find_points_in_range(lat, lon, radius):
+    """Finds schools and parks within a given radius (in meters) of a point, using projected CRS."""
+    # Define a suitable projected CRS (e.g., UTM zone for Bologna)
+    projected_crs = "EPSG:32632"
+    original_crs = scuole_gdf.crs # Assumes scuole_gdf exists and has the correct original CRS
+
+    # Create a GeoSeries for the input point and project it
+    point_geom = gpd.GeoSeries([Point(lon, lat)], crs=original_crs)
+    point_proj = point_geom.to_crs(projected_crs).iloc[0]
+
+    # Project the GeoDataFrames
+    scuole_proj = scuole_gdf.to_crs(projected_crs)
+    aree_verdi_proj = aree_verdi_gdf.to_crs(projected_crs)
+
+    # Perform distance calculation in the projected CRS (meters)
+    nearby_schools_indices = scuole_proj[scuole_proj.distance(point_proj) <= radius].index
+    nearby_parks_indices = aree_verdi_proj[aree_verdi_proj.distance(point_proj) <= radius].index
+
+    # Select original rows using the index
+    nearby_schools = scuole_gdf.loc[nearby_schools_indices]
+    nearby_parks = aree_verdi_gdf.loc[nearby_parks_indices]
+
+    return nearby_schools, nearby_parks
+
+    
+
+
+
 # --- Example Usage ---
 if __name__ == "__main__":
     print("Generating Folium map...")

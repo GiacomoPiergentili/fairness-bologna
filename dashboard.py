@@ -12,7 +12,7 @@ from utils import *
 
 # Import the function
 from streamlit_folium import st_folium
-from bologna_simulation import plot_map_folium
+from bologna_simulation import plot_map_folium, find_points_in_range
 
 st.set_page_config(layout="wide")
 
@@ -56,7 +56,6 @@ def get_probs(t, probs):
     softmaxed_probs = softmax(scaled_values)
     return scaled_probs_dict, {key:softmaxed_probs[_] for _,key in enumerate(keys)}
 
-
 door = None
 
 # --- Create Columns for Layout ---
@@ -70,6 +69,7 @@ with col2:
     show_aree_verdi_opt = st.checkbox("🟢 Mostra Aree Verdi", value=True)
     show_radius_opt = st.checkbox("⭕ Mostra Raggio di Azione", value=False)
     choose_radius = st.slider("Raggio di azione", min_value=0, max_value=1000, value=650, step=25)
+
 
 # --- Place Map in the Left Column (col1) ---
 with col1:
@@ -103,18 +103,47 @@ with col1:
         st.exception(e) # Shows the full traceback
 
 # Note: The "Dashboard execution finished" message will appear below col1
-
 col3, col4 = st.columns(2)
-
+# --- Add a new row below the map with two columns ---
+# --- Add a new row below the map with two columns ---
 if door:
     # --- Define Sliders First (in col3) ---
     with col3:
         st.title(f"Door settings: {door}")
+
+        min_schools, max_schools = 30, 0
+        min_parks, max_parks = 30, 0
+
+        for key in data.porte_data.keys():
+            schools, parks = find_points_in_range(data.porte_data[key]["coords"][0], data.porte_data[key]["coords"][1], choose_radius)
+            min_schools = min(min_schools, len(schools))
+            max_schools = max(max_schools, len(schools))
+            min_parks = min(min_parks, len(parks))
+            max_parks = max(max_parks, len(parks))
+            print(f"Min schools: {min_schools}, Max schools: {max_schools}")
+            print(f"Min parks: {min_parks}, Max parks: {max_parks}")
+
         # Use a temporary dictionary to store slider values for this run
         current_door_vals = {}
         for key in data.porte_data[door]['vals']:
             # Read the current value from the data structure for the default
-            default_value = data.porte_data[door]['vals'][key]
+            schools, parks = find_points_in_range(data.porte_data[door]["coords"][0], data.porte_data[door]["coords"][1], choose_radius)
+            if (key == 'aree verdi gratuite' or 
+                    key == 'aree verdi pagamento'):
+                default_value = ramp_val(2.0,
+                                         min_parks,
+                                         max_parks,
+                                         len(parks)
+                                    )-1.0
+            elif(key == 'scuole pubbliche' or 
+                    key == 'scuole private'):
+                default_value = ramp_val(2.0,
+                                         min_schools,
+                                         max_schools,
+                                         len(schools)
+                                    )-1.0
+            else:
+                default_value = data.porte_data[door]['vals'][key]
             # Create the slider and store its *current* return value
             current_door_vals[key] = st.slider(
                 key,
@@ -191,12 +220,5 @@ if door:
 
         st.pyplot(fig)  # Visualizza il grafico in Streamlit
 else:
-    # --- Define Placeholders when NO door is selected ---
-    with col3:
-        st.info("Click a 'Porta' marker on the map to view and adjust its settings.")
-        # You can add more empty space or other placeholder elements if needed
-        # st.write("") # Adds some vertical space
-
-    with col4:
-        st.info("Simulation predictions will appear here once a door is selected.")
-        # st.write("")
+    # Display a simple message below the map when no door is selected
+    st.info("Click a 'Porta' marker on the map to view details and simulation.")
