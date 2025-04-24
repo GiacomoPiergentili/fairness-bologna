@@ -23,11 +23,11 @@ def children_prob(t):
 
         const_val(0.2,15,20,t)
     )
-    return max(0.02,val) # smoothing
+    return max(0,val) # smoothing
 
 def guys_prob(t):
     val = (
-        0.2+\
+        0.5+\
         ramp_val(0.8, 6,7.5,t)+\
         const_val(0.8,7.5,22,t)+\
         (const_val(0.8,22,24,t)-ramp_val(0.8, 22,24,t)) 
@@ -40,13 +40,13 @@ def man_prob(t):
         const_val(1,7.5,8.5,t)+\
         (const_val(1,8.5,9,t)-ramp_val(1, 8.5,9.1,t))+\
 
-        const_val(0.2,9,15.6,t)+\
+        const_val(0.5,9,15.6,t)+\
 
         ramp_val(1, 15.5,16,t)+\
         const_val(1,16,19,t)+\
         (const_val(1,19,20,t)-ramp_val(1, 19,20.1,t))+\
 
-        const_val(0.2,20,24,t)
+        const_val(0.5,20,24,t)
     )
     return max(0.1,val) # smoothing
 
@@ -57,18 +57,20 @@ def woman_prob(t):
         const_val(0.9,7.5,8.5,t)+\
         (const_val(0.9,8.5,9,t)-ramp_val(0.9, 8.5,9.1,t))+\
 
-        const_val(0.2,9,12,t)+\
+        const_val(0.5,9,12,t)+\
 
         ramp_val(0.9, 12,12.5,t)+\
         const_val(0.9,12.5,14,t)+\
         (const_val(0.9,14,15,t)-ramp_val(0.9, 14,15,t))+\
 
-        const_val(0.1,15,20,t)
+        const_val(0.5,15,20,t)
     )
     return max(0.1,val) # smoothing
 
 def plot_probs():
     import numpy as np
+    import matplotlib
+    matplotlib.use('Qt5Agg')
     import matplotlib.pyplot as plt
 
     ts = np.linspace(0,24,num=100)

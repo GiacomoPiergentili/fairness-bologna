@@ -50,6 +50,18 @@ porte_data = {
       "mobilita": -0.9,
     }
   },
+  "san_isaia": {
+    "coords": (44.494722736370974, 11.328817848825718),
+    "vals": {
+      "costo ingresso": 0.5,
+      "aree verdi gratuite": -0.5,
+      "aree verdi pagamento": 0.5,
+      "scuole pubbliche": -0.5,
+      "scuole private": -0.5,
+      "servizi": -0.5,
+      "mobilita": -0.9,
+    }
+  },
   "san_felice": {
     "coords": (44.49954001528024, 11.327157797268898),
     "vals": {
@@ -63,7 +75,19 @@ porte_data = {
     }
   },
   "lame": {
-    "coords": (44.50321594653266, 11.333574503784252),
+    "coords": (44.50242902355546, 11.333746465890892),
+    "vals": {
+      "costo ingresso": 0.5,
+      "aree verdi gratuite": -0.5,
+      "aree verdi pagamento": 0.5,
+      "scuole pubbliche": -0.5,
+      "scuole private": -0.5,
+      "servizi": -0.5,
+      "mobilita": -0.9,
+    }
+  },
+  "galliera": {
+    "coords": (44.504122308476425, 11.344755553055865),
     "vals": {
       "costo ingresso": 0.5,
       "aree verdi gratuite": -0.5,
@@ -75,7 +99,7 @@ porte_data = {
     }
   },
   "mascarella": {
-    "coords": (44.502879537029294, 11.352576531365191),
+    "coords": (44.502187603690956, 11.353025162795086),
     "vals": {
       "costo ingresso": 0.5,
       "aree verdi gratuite": -0.5,
@@ -87,7 +111,7 @@ porte_data = {
     }
   },
   "san_donato": {
-    "coords": (44.49874634755899, 11.356821665186462),
+    "coords": (44.49842310195063, 11.356597138637024),
     "vals": {
       "costo ingresso": 0.5,
       "aree verdi gratuite": -0.5,
@@ -99,7 +123,7 @@ porte_data = {
     }
   },
   "san_vitale": {
-    "coords": (44.49446761939387, 11.356959971239052),
+    "coords": (44.49409991185012, 11.356588928248431),
     "vals": {
       "costo ingresso": 0.5,
       "aree verdi gratuite": -0.5,
@@ -110,20 +134,32 @@ porte_data = {
       "mobilita": -0.9,
     }
   },
-  "maggiore": {
-    "coords": (44.49050398704167, 11.357390145940457),
-    "vals": {
-      "costo ingresso": 0.5,
-      "aree verdi gratuite": -0.5,
-      "aree verdi pagamento": 0.5,
-      "scuole pubbliche": -0.5,
-      "scuole private": -0.5,
-      "servizi": -0.5,
-      "mobilita": -0.9,
-    }
-  },
+  # "maggiore": { # dati sul traffico mancanti
+  #   "coords": (44.49020940327005, 11.356963780736049),
+  #   "vals": {
+  #     "costo ingresso": 0.5,
+  #     "aree verdi gratuite": -0.5,
+  #     "aree verdi pagamento": 0.5,
+  #     "scuole pubbliche": -0.5,
+  #     "scuole private": -0.5,
+  #     "servizi": -0.5,
+  #     "mobilita": -0.9,
+  #   }
+  # },
+  # "san_mammolo": { # dati sul traffico mancanti
+  #   "coords": (44.48673817372272, 11.338747595243037),
+  #   "vals": {
+  #     "costo ingresso": 0.5,
+  #     "aree verdi gratuite": -0.5,
+  #     "aree verdi pagamento": 0.5,
+  #     "scuole pubbliche": -0.5,
+  #     "scuole private": -0.5,
+  #     "servizi": -0.5,
+  #     "mobilita": -0.9,
+  #   }
+  # },
   "santo_stefano": {
-    "coords": (44.485159049817206, 11.356063773944452),
+    "coords": (44.48473726216725, 11.355507110876715),
     "vals": {
       "costo ingresso": 0.5,
       "aree verdi gratuite": -0.5,
@@ -135,7 +171,7 @@ porte_data = {
     }
   },
   "castiglione": {
-    "coords": (44.486105318390955, 11.348069693455418),
+    "coords": (44.48578661814331, 11.34880944929151),
     "vals": {
       "costo ingresso": 0.5,
       "aree verdi gratuite": -0.5,

@@ -20,11 +20,31 @@ st.title("Bologna Simulation Dashboard")
 
 # to be adjusted
 import data # qua deve venire caricato il json con le impostazioni
-path = 'data/varco-n-59-saragozza-direzione-centro.csv' # questo permette di trovare le ts per porta
 
-df = pd.read_csv(path, sep=';')
-ts_saragozza=get_stats_ts(df)
-ts_saragozza.head(5)
+def get_path(door):
+    path = 'data/doors_flow_rates/'
+    match door:
+        case 'saragozza':
+            path+='varco-n-59-saragozza-direzione-centro.csv'
+        case 'san_isaia':
+            path+='varco-n-1-s-isaia-direzione-centro.csv'
+        case 'san_felice':
+            path+='varco-n-1059-san-felice-direzione-centro.csv'
+        case 'lame':
+            path+='varco-n-55-lame-direzione-centro.csv'
+        case 'galliera':
+            path+='varco-n-38-indipendenza-direzione-centro.csv'
+        case 'mascarella':
+            path+='varco-n-53-mascarella-direzione-sud.csv'
+        case 'san_donato':
+            path+='varco-n-65.csv'
+        case 'san_vitale':
+            path+='varco-n-2-s-vitale-direzione-centro.csv'
+        case 'santo_stefano':
+            path+='varco-n-45-pta-santo-stefano-direzione-centro.csv'
+        case 'castiglione':
+            path+='varco-n-7-viale-xii-giugno-direzione-centro.csv'
+    return path
 
 def get_probs(t, probs):
     keys=probs.keys()
@@ -83,6 +103,12 @@ with col1:
 
 # --- Add a new row below the map with two columns ---
 if door:
+
+    # path = 'data/doors_flow_rates/varco-n-59-saragozza-direzione-centro.csv' # questo permette di trovare le ts per porta
+    path = get_path(door)
+    df = pd.read_csv(path, sep=';')
+    ts_data=get_stats_ts(df)
+
     effort = {age_category : weight_function(age_category, data.weights, data.porte_data[door]) for age_category in data.weights.keys()}
 
     # P(attraversare)=1-costo attuale/massimo costo
@@ -104,7 +130,7 @@ if door:
 
     volumes_scaled = {key: [] for key in keys}
 
-    for index, row in ts_saragozza.iterrows():
+    for index, row in ts_data.iterrows():
         t=(row['hour']*100+row['minute_interval']*1.6779661017)/100 # per convertire l'ora nel range 0..24
 
         softmax_dict = get_probs(t, probs)[1]
@@ -135,11 +161,11 @@ if door:
         for key in keys:
             ax.plot(volumes_scaled[key], label=key, linestyle='-')
 
-        ax.plot(ts_saragozza['mean'], label='flow rate of people', linestyle='dotted')
+        ax.plot(ts_data['mean'], label='flow rate of people', linestyle='dotted')
 
-        ax.set_xticks(np.arange(0, len(ts_saragozza), step=4))
+        ax.set_xticks(np.arange(0, len(ts_data), step=4))
         ax.set_xticklabels(
-            [ts_saragozza['timeStr'][i] for i in range(0, len(ts_saragozza), 4)],
+            [ts_data['timeStr'][i] for i in range(0, len(ts_data), 4)],
             rotation=45
         )
 
