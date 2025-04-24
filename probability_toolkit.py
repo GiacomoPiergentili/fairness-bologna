@@ -69,6 +69,8 @@ def woman_prob(t):
 
 def plot_probs():
     import numpy as np
+    import matplotlib
+    matplotlib.use('Qt5Agg')
     import matplotlib.pyplot as plt
 
     ts = np.linspace(0,24,num=100)

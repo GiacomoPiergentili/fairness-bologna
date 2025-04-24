@@ -1,0 +1,2711 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_5f510643b1297031cdc8b53d5043fbeb {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_5f510643b1297031cdc8b53d5043fbeb" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_5f510643b1297031cdc8b53d5043fbeb = L.map(
+                "map_5f510643b1297031cdc8b53d5043fbeb",
+                {
+                    center: [44.4949, 11.3426],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_25c3e9d598308bc92d49f5c92545a7d2 = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca target=\"_blank\" href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca target=\"_blank\" href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_5f510643b1297031cdc8b53d5043fbeb);
+        
+    
+            var feature_group_244917066fa4e5685fa673cc5c35e755 = L.featureGroup(
+                {}
+            ).addTo(map_5f510643b1297031cdc8b53d5043fbeb);
+        
+    
+            var circle_marker_2502729973eec7df27ef0740b0734064 = L.circleMarker(
+                [44.49115432071788, 11.336888530960552],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_244917066fa4e5685fa673cc5c35e755);
+        
+    
+        var popup_131e62987ac7fb02d1a8638137797e84 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_cc042186abdf7073727d353b273dd1ff = $(`<div id="html_cc042186abdf7073727d353b273dd1ff" style="width: 100.0%; height: 100.0%;">LAURA BASSI (SEDE DISTACCATA) - LICEO MUSICALE LUCIO DALLA</div>`)[0];
+                popup_131e62987ac7fb02d1a8638137797e84.setContent(html_cc042186abdf7073727d353b273dd1ff);
+            
+        
+
+        circle_marker_2502729973eec7df27ef0740b0734064.bindPopup(popup_131e62987ac7fb02d1a8638137797e84)
+        ;
+
+        
+    
+    
+            circle_marker_2502729973eec7df27ef0740b0734064.bindTooltip(
+                `<div>
+                     <b>LAURA BASSI (SEDE DISTACCATA) - LICEO MUSICALE LUCIO DALLA</b><br>Servizio: SCUOLA SECONDARIA DI SECONDO GRADO<br>Istituto: LAURA BASSI<br>Indirizzo: VIA DEL RICCIO 5<extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_291db6899b48aad9cd2ce5b6d8c1fbf6 = L.circleMarker(
+                [44.48818856479583, 11.339576848718103],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_244917066fa4e5685fa673cc5c35e755);
+        
+    
+        var popup_f0291365f3653723678d6cf9b5ad734c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_3cfdee3d4cf834bc2db6d49f24a9b182 = $(`<div id="html_3cfdee3d4cf834bc2db6d49f24a9b182" style="width: 100.0%; height: 100.0%;">COLLEGIO SAN LUIGI</div>`)[0];
+                popup_f0291365f3653723678d6cf9b5ad734c.setContent(html_3cfdee3d4cf834bc2db6d49f24a9b182);
+            
+        
+
+        circle_marker_291db6899b48aad9cd2ce5b6d8c1fbf6.bindPopup(popup_f0291365f3653723678d6cf9b5ad734c)
+        ;
+
+        
+    
+    
+            circle_marker_291db6899b48aad9cd2ce5b6d8c1fbf6.bindTooltip(
+                `<div>
+                     <b>COLLEGIO SAN LUIGI</b><br>Servizio: SCUOLA SECONDARIA DI SECONDO GRADO<br>Istituto: COLLEGIO SAN LUIGI<br>Indirizzo: VIA D'AZEGLIO 55<extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_2e4f5b4973e86fb53caf4b440e4a7fbe = L.circleMarker(
+                [44.50130109386025, 11.339325405243633],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_244917066fa4e5685fa673cc5c35e755);
+        
+    
+        var popup_ef707c089dee3cd9f64940c09c1136d8 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_3a5a621877be559d0cbd2db3aad77398 = $(`<div id="html_3a5a621877be559d0cbd2db3aad77398" style="width: 100.0%; height: 100.0%;">ALDROVANDI RUBBIANI (SEDE CENTRALE)</div>`)[0];
+                popup_ef707c089dee3cd9f64940c09c1136d8.setContent(html_3a5a621877be559d0cbd2db3aad77398);
+            
+        
+
+        circle_marker_2e4f5b4973e86fb53caf4b440e4a7fbe.bindPopup(popup_ef707c089dee3cd9f64940c09c1136d8)
+        ;
+
+        
+    
+    
+            circle_marker_2e4f5b4973e86fb53caf4b440e4a7fbe.bindTooltip(
+                `<div>
+                     <b>ALDROVANDI RUBBIANI (SEDE CENTRALE)</b><br>Servizio: SCUOLA SECONDARIA DI SECONDO GRADO<br>Istituto: ALDROVANDI RUBBIANI<br>Indirizzo: VIA GUGLIELMO MARCONI 40<extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_44b1fd876677d3b1fff50d6b6a128b24 = L.circleMarker(
+                [44.48907279059153, 11.342427660536588],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_244917066fa4e5685fa673cc5c35e755);
+        
+    
+        var popup_fa6a8830ad78c673528a3e5cc5ef96b1 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_2b9b6de5d7996fff867cc55295db3993 = $(`<div id="html_2b9b6de5d7996fff867cc55295db3993" style="width: 100.0%; height: 100.0%;">TOVAGLIE</div>`)[0];
+                popup_fa6a8830ad78c673528a3e5cc5ef96b1.setContent(html_2b9b6de5d7996fff867cc55295db3993);
+            
+        
+
+        circle_marker_44b1fd876677d3b1fff50d6b6a128b24.bindPopup(popup_fa6a8830ad78c673528a3e5cc5ef96b1)
+        ;
+
+        
+    
+    
+            circle_marker_44b1fd876677d3b1fff50d6b6a128b24.bindTooltip(
+                `<div>
+                     <b>TOVAGLIE</b><br>Servizio: NIDO D'INFANZIA<br>Istituto: COMUNE DI BOLOGNA<br>Indirizzo: VIA DE' MATTUIANI 1<extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_f82828cef6dbdefcc6554ffe8c5a8928 = L.circleMarker(
+                [44.50302319738268, 11.346214030927708],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_244917066fa4e5685fa673cc5c35e755);
+        
+    
+        var popup_c2f31c9cb53a8ef507a06570e4e1c9bf = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_04089dc846013ba172e590a792ebbdbb = $(`<div id="html_04089dc846013ba172e590a792ebbdbb" style="width: 100.0%; height: 100.0%;">GIACCAGLIA BETTI</div>`)[0];
+                popup_c2f31c9cb53a8ef507a06570e4e1c9bf.setContent(html_04089dc846013ba172e590a792ebbdbb);
+            
+        
+
+        circle_marker_f82828cef6dbdefcc6554ffe8c5a8928.bindPopup(popup_c2f31c9cb53a8ef507a06570e4e1c9bf)
+        ;
+
+        
+    
+    
+            circle_marker_f82828cef6dbdefcc6554ffe8c5a8928.bindTooltip(
+                `<div>
+                     <b>GIACCAGLIA BETTI</b><br>Servizio: NIDO D'INFANZIA<br>Istituto: COMUNE DI BOLOGNA<br>Indirizzo: VIA IRNERIO 2<extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_303c666f90c4557654962c89f136bf84 = L.circleMarker(
+                [44.49052319549023, 11.352837503393575],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_244917066fa4e5685fa673cc5c35e755);
+        
+    
+        var popup_f04c8994ed1d622135319d05be0c5ba7 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_e09b5245c9649543205758886f905b88 = $(`<div id="html_e09b5245c9649543205758886f905b88" style="width: 100.0%; height: 100.0%;">EDUCARE E CRESCERE</div>`)[0];
+                popup_f04c8994ed1d622135319d05be0c5ba7.setContent(html_e09b5245c9649543205758886f905b88);
+            
+        
+
+        circle_marker_303c666f90c4557654962c89f136bf84.bindPopup(popup_f04c8994ed1d622135319d05be0c5ba7)
+        ;
+
+        
+    
+    
+            circle_marker_303c666f90c4557654962c89f136bf84.bindTooltip(
+                `<div>
+                     <b>EDUCARE E CRESCERE</b><br>Servizio: NIDO D'INFANZIA<br>Istituto: EDUCARE E CRESCERE<br>Indirizzo: VIA DEI BERSAGLIERI 5<extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_6804c4c06d4ab2c0f8be993ec67a504a = L.circleMarker(
+                [44.48924829051044, 11.347457776801386],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_244917066fa4e5685fa673cc5c35e755);
+        
+    
+        var popup_9f8bd3b13f4a2a4447058ccf1aadb41a = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_b88ec9389f7129facf0a2424026ddd22 = $(`<div id="html_b88ec9389f7129facf0a2424026ddd22" style="width: 100.0%; height: 100.0%;">GALVANI (SEDE CENTRALE)</div>`)[0];
+                popup_9f8bd3b13f4a2a4447058ccf1aadb41a.setContent(html_b88ec9389f7129facf0a2424026ddd22);
+            
+        
+
+        circle_marker_6804c4c06d4ab2c0f8be993ec67a504a.bindPopup(popup_9f8bd3b13f4a2a4447058ccf1aadb41a)
+        ;
+
+        
+    
+    
+            circle_marker_6804c4c06d4ab2c0f8be993ec67a504a.bindTooltip(
+                `<div>
+                     <b>GALVANI (SEDE CENTRALE)</b><br>Servizio: SCUOLA SECONDARIA DI SECONDO GRADO<br>Istituto: GALVANI<br>Indirizzo: VIA CASTIGLIONE 38<extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_b7104587f9914c6bb912262aa4fbfe7c = L.circleMarker(
+                [44.49040092710392, 11.336597967096592],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_244917066fa4e5685fa673cc5c35e755);
+        
+    
+        var popup_d885791b42e2e5e05a725168441a0010 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_3621329f422d1b7f65e85df192d66745 = $(`<div id="html_3621329f422d1b7f65e85df192d66745" style="width: 100.0%; height: 100.0%;">CRESCENZI PACINOTTI SIRANI</div>`)[0];
+                popup_d885791b42e2e5e05a725168441a0010.setContent(html_3621329f422d1b7f65e85df192d66745);
+            
+        
+
+        circle_marker_b7104587f9914c6bb912262aa4fbfe7c.bindPopup(popup_d885791b42e2e5e05a725168441a0010)
+        ;
+
+        
+    
+    
+            circle_marker_b7104587f9914c6bb912262aa4fbfe7c.bindTooltip(
+                `<div>
+                     <b>CRESCENZI PACINOTTI SIRANI</b><br>Servizio: SCUOLA SECONDARIA DI SECONDO GRADO<br>Istituto: CRESCENZI PACINOTTI SIRANI<br>Indirizzo: VIA SARAGOZZA 9<extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_b08f7d7df7b5b0c06eb5198abf3d1c37 = L.circleMarker(
+                [44.489345840043974, 11.348740694519257],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_244917066fa4e5685fa673cc5c35e755);
+        
+    
+        var popup_0c10f7f1cd880115aa5244242e75738b = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_3375254a93b673c1abbeefb22a5e7ec7 = $(`<div id="html_3375254a93b673c1abbeefb22a5e7ec7" style="width: 100.0%; height: 100.0%;">ARCANGELI - CENTRO DIDATTICA DELLE ARTI (2006)</div>`)[0];
+                popup_0c10f7f1cd880115aa5244242e75738b.setContent(html_3375254a93b673c1abbeefb22a5e7ec7);
+            
+        
+
+        circle_marker_b08f7d7df7b5b0c06eb5198abf3d1c37.bindPopup(popup_0c10f7f1cd880115aa5244242e75738b)
+        ;
+
+        
+    
+    
+            circle_marker_b08f7d7df7b5b0c06eb5198abf3d1c37.bindTooltip(
+                `<div>
+                     <b>ARCANGELI - CENTRO DIDATTICA DELLE ARTI (2006)</b><br>Servizio: SCUOLA SECONDARIA DI SECONDO GRADO<br>Istituto: ARCANGELI<br>Indirizzo: VIA CARTOLERIA 9<extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_81f0495f315e8f21e56123d894b4895b = L.circleMarker(
+                [44.49108182762096, 11.334621083683025],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_244917066fa4e5685fa673cc5c35e755);
+        
+    
+        var popup_d38148899a7e545d333110dd71f038cd = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_915319d8407eba0807e1310061952429 = $(`<div id="html_915319d8407eba0807e1310061952429" style="width: 100.0%; height: 100.0%;">IL CAVALLINO A DONDOLO</div>`)[0];
+                popup_d38148899a7e545d333110dd71f038cd.setContent(html_915319d8407eba0807e1310061952429);
+            
+        
+
+        circle_marker_81f0495f315e8f21e56123d894b4895b.bindPopup(popup_d38148899a7e545d333110dd71f038cd)
+        ;
+
+        
+    
+    
+            circle_marker_81f0495f315e8f21e56123d894b4895b.bindTooltip(
+                `<div>
+                     <b>IL CAVALLINO A DONDOLO</b><br>Servizio: NIDO D'INFANZIA<br>Istituto: IL CAVALLINO A DONDOLO<br>Indirizzo: VIA NOSADELLA 49<extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_dddebfb7d4d8101a76b52bfa50a46a6a = L.circleMarker(
+                [44.501808402006816, 11.33571705378251],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_244917066fa4e5685fa673cc5c35e755);
+        
+    
+        var popup_01461f098ef110bf22c50e9564109999 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_e5f37504f9b8898ebdc71744fd7684ed = $(`<div id="html_e5f37504f9b8898ebdc71744fd7684ed" style="width: 100.0%; height: 100.0%;">MAGO MERLINO</div>`)[0];
+                popup_01461f098ef110bf22c50e9564109999.setContent(html_e5f37504f9b8898ebdc71744fd7684ed);
+            
+        
+
+        circle_marker_dddebfb7d4d8101a76b52bfa50a46a6a.bindPopup(popup_01461f098ef110bf22c50e9564109999)
+        ;
+
+        
+    
+    
+            circle_marker_dddebfb7d4d8101a76b52bfa50a46a6a.bindTooltip(
+                `<div>
+                     <b>MAGO MERLINO</b><br>Servizio: SCUOLA DELL'INFANZIA<br>Istituto: COMUNE DI BOLOGNA<br>Indirizzo: VIA AZZO GARDINO 63<extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_167251b657c2f6ee50d57a91a7996d95 = L.circleMarker(
+                [44.48556063636361, 11.35027818378199],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_244917066fa4e5685fa673cc5c35e755);
+        
+    
+        var popup_66de0378da2842475738b25e05607014 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_b5e875d469169f26f4c2613c96cb2a1a = $(`<div id="html_b5e875d469169f26f4c2613c96cb2a1a" style="width: 100.0%; height: 100.0%;">ROLANDINO DE PASSEGGERI</div>`)[0];
+                popup_66de0378da2842475738b25e05607014.setContent(html_b5e875d469169f26f4c2613c96cb2a1a);
+            
+        
+
+        circle_marker_167251b657c2f6ee50d57a91a7996d95.bindPopup(popup_66de0378da2842475738b25e05607014)
+        ;
+
+        
+    
+    
+            circle_marker_167251b657c2f6ee50d57a91a7996d95.bindTooltip(
+                `<div>
+                     <b>ROLANDINO DE PASSEGGERI</b><br>Servizio: SCUOLA SECONDARIA DI PRIMO GRADO<br>Istituto: ISTITUTO COMPRENSIVO N. 20<br>Indirizzo: VIA GIOVANNI PASCOLI 5<extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_d7f939bc6df2858c1b2fd08ea96b766a = L.circleMarker(
+                [44.492914057541, 11.354171926125153],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_244917066fa4e5685fa673cc5c35e755);
+        
+    
+        var popup_cb816b14da28637920c0e949f1220f2b = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_c57b2d00b16de41ca5c2a57c73835dd5 = $(`<div id="html_c57b2d00b16de41ca5c2a57c73835dd5" style="width: 100.0%; height: 100.0%;">GUIDO RENI</div>`)[0];
+                popup_cb816b14da28637920c0e949f1220f2b.setContent(html_c57b2d00b16de41ca5c2a57c73835dd5);
+            
+        
+
+        circle_marker_d7f939bc6df2858c1b2fd08ea96b766a.bindPopup(popup_cb816b14da28637920c0e949f1220f2b)
+        ;
+
+        
+    
+    
+            circle_marker_d7f939bc6df2858c1b2fd08ea96b766a.bindTooltip(
+                `<div>
+                     <b>GUIDO RENI</b><br>Servizio: SCUOLA SECONDARIA DI PRIMO GRADO<br>Istituto: ISTITUTO COMPRENSIVO N. 16<br>Indirizzo: VICOLO BOLOGNETTI 10<extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_653f1dbc46b0b9848d005a7785c4da19 = L.circleMarker(
+                [44.48977434944751, 11.337596016379136],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_244917066fa4e5685fa673cc5c35e755);
+        
+    
+        var popup_2b5c5008e26f216ce49c433a488b661c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_1f4758042f980955c458ad08cae12bb3 = $(`<div id="html_1f4758042f980955c458ad08cae12bb3" style="width: 100.0%; height: 100.0%;">SANT'ALBERTO MAGNO</div>`)[0];
+                popup_2b5c5008e26f216ce49c433a488b661c.setContent(html_1f4758042f980955c458ad08cae12bb3);
+            
+        
+
+        circle_marker_653f1dbc46b0b9848d005a7785c4da19.bindPopup(popup_2b5c5008e26f216ce49c433a488b661c)
+        ;
+
+        
+    
+    
+            circle_marker_653f1dbc46b0b9848d005a7785c4da19.bindTooltip(
+                `<div>
+                     <b>SANT'ALBERTO MAGNO</b><br>Servizio: SCUOLA SECONDARIA DI PRIMO GRADO<br>Istituto: SANT'ALBERTO MAGNO<br>Indirizzo: VIA PALESTRO 6<extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_68ffcb5f742e29cb217ff2d1e8885998 = L.circleMarker(
+                [44.501808402006816, 11.33571705378251],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_244917066fa4e5685fa673cc5c35e755);
+        
+    
+        var popup_ee88baf2e6cb93c8255e6aa65a96777f = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_60401b9ae77a94e089db86c731729b1e = $(`<div id="html_60401b9ae77a94e089db86c731729b1e" style="width: 100.0%; height: 100.0%;">VIGANÒ</div>`)[0];
+                popup_ee88baf2e6cb93c8255e6aa65a96777f.setContent(html_60401b9ae77a94e089db86c731729b1e);
+            
+        
+
+        circle_marker_68ffcb5f742e29cb217ff2d1e8885998.bindPopup(popup_ee88baf2e6cb93c8255e6aa65a96777f)
+        ;
+
+        
+    
+    
+            circle_marker_68ffcb5f742e29cb217ff2d1e8885998.bindTooltip(
+                `<div>
+                     <b>VIGANÒ</b><br>Servizio: NIDO D'INFANZIA<br>Istituto: COMUNE DI BOLOGNA<br>Indirizzo: VIA AZZO GARDINO 63<extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_11b7ca45cdb475fe6e8d75a856f71307 = L.circleMarker(
+                [44.50291992873153, 11.34980124342299],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_244917066fa4e5685fa673cc5c35e755);
+        
+    
+        var popup_4d1462dfc53ee50f209e498fa37671f3 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_2b9106ced6731e60d48c09f18959b1b0 = $(`<div id="html_2b9106ced6731e60d48c09f18959b1b0" style="width: 100.0%; height: 100.0%;">ERCOLANI</div>`)[0];
+                popup_4d1462dfc53ee50f209e498fa37671f3.setContent(html_2b9106ced6731e60d48c09f18959b1b0);
+            
+        
+
+        circle_marker_11b7ca45cdb475fe6e8d75a856f71307.bindPopup(popup_4d1462dfc53ee50f209e498fa37671f3)
+        ;
+
+        
+    
+    
+            circle_marker_11b7ca45cdb475fe6e8d75a856f71307.bindTooltip(
+                `<div>
+                     <b>ERCOLANI</b><br>Servizio: SCUOLA PRIMARIA<br>Istituto: ISTITUTO COMPRENSIVO N. 06<br>Indirizzo: MURA DI PORTA GALLIERA 1<extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_55a8150b08c171deef98b50074b05233 = L.circleMarker(
+                [44.49282036705703, 11.333432920615621],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_244917066fa4e5685fa673cc5c35e755);
+        
+    
+        var popup_07d6d5e5e10e81de5792f5ca54cbfc6b = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_62fe9f288e4ac4d196086e62a25fbc20 = $(`<div id="html_62fe9f288e4ac4d196086e62a25fbc20" style="width: 100.0%; height: 100.0%;">ANNA SERRA PLESSO 1</div>`)[0];
+                popup_07d6d5e5e10e81de5792f5ca54cbfc6b.setContent(html_62fe9f288e4ac4d196086e62a25fbc20);
+            
+        
+
+        circle_marker_55a8150b08c171deef98b50074b05233.bindPopup(popup_07d6d5e5e10e81de5792f5ca54cbfc6b)
+        ;
+
+        
+    
+    
+            circle_marker_55a8150b08c171deef98b50074b05233.bindTooltip(
+                `<div>
+                     <b>ANNA SERRA PLESSO 1</b><br>Servizio: SCUOLA DELL'INFANZIA<br>Istituto: COMUNE DI BOLOGNA<br>Indirizzo: VIA CA' SELVATICA 11<extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_8b7b34274f8563c1461af782d7b95964 = L.circleMarker(
+                [44.50319772435913, 11.343307178146729],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_244917066fa4e5685fa673cc5c35e755);
+        
+    
+        var popup_bd1d5a3fb83f0e0f834f84e5a36011eb = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_fdc7fae7a53fe151b48ceabd42ad9cc1 = $(`<div id="html_fdc7fae7a53fe151b48ceabd42ad9cc1" style="width: 100.0%; height: 100.0%;">DE AMICIS</div>`)[0];
+                popup_bd1d5a3fb83f0e0f834f84e5a36011eb.setContent(html_fdc7fae7a53fe151b48ceabd42ad9cc1);
+            
+        
+
+        circle_marker_8b7b34274f8563c1461af782d7b95964.bindPopup(popup_bd1d5a3fb83f0e0f834f84e5a36011eb)
+        ;
+
+        
+    
+    
+            circle_marker_8b7b34274f8563c1461af782d7b95964.bindTooltip(
+                `<div>
+                     <b>DE AMICIS</b><br>Servizio: SCUOLA DELL'INFANZIA<br>Istituto: ISTITUTO COMPRENSIVO N. 18<br>Indirizzo: VIA MILAZZO 3<extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_b99b737ade3d8d9cc9dcde88af514d0a = L.circleMarker(
+                [44.503085858139215, 11.346064963263483],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_244917066fa4e5685fa673cc5c35e755);
+        
+    
+        var popup_0271f7874513e21057755dec8bb795e8 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d8d174e2897d825888d8ddc0b4c85b24 = $(`<div id="html_d8d174e2897d825888d8ddc0b4c85b24" style="width: 100.0%; height: 100.0%;">BETTI - PLESSO 2</div>`)[0];
+                popup_0271f7874513e21057755dec8bb795e8.setContent(html_d8d174e2897d825888d8ddc0b4c85b24);
+            
+        
+
+        circle_marker_b99b737ade3d8d9cc9dcde88af514d0a.bindPopup(popup_0271f7874513e21057755dec8bb795e8)
+        ;
+
+        
+    
+    
+            circle_marker_b99b737ade3d8d9cc9dcde88af514d0a.bindTooltip(
+                `<div>
+                     <b>BETTI - PLESSO 2</b><br>Servizio: SCUOLA DELL'INFANZIA<br>Istituto: COMUNE DI BOLOGNA<br>Indirizzo: VIA IRNERIO 2<extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_cdea7ab33fa55d728c46e8498eb366a5 = L.circleMarker(
+                [44.503085858139215, 11.346064963263483],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_244917066fa4e5685fa673cc5c35e755);
+        
+    
+        var popup_1acde4e3e9d1889216024fcc4aedb467 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_ea8ae54f54c8c0532fd7bf10cc5d2195 = $(`<div id="html_ea8ae54f54c8c0532fd7bf10cc5d2195" style="width: 100.0%; height: 100.0%;">BETTI - PLESSO 3</div>`)[0];
+                popup_1acde4e3e9d1889216024fcc4aedb467.setContent(html_ea8ae54f54c8c0532fd7bf10cc5d2195);
+            
+        
+
+        circle_marker_cdea7ab33fa55d728c46e8498eb366a5.bindPopup(popup_1acde4e3e9d1889216024fcc4aedb467)
+        ;
+
+        
+    
+    
+            circle_marker_cdea7ab33fa55d728c46e8498eb366a5.bindTooltip(
+                `<div>
+                     <b>BETTI - PLESSO 3</b><br>Servizio: SCUOLA DELL'INFANZIA<br>Istituto: COMUNE DI BOLOGNA<br>Indirizzo: VIA IRNERIO 2<extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_55538f4bec13fccdddb3e4c92af9d2c7 = L.circleMarker(
+                [44.492110310418575, 11.35559005063417],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_244917066fa4e5685fa673cc5c35e755);
+        
+    
+        var popup_0ddc72460084d35251f22ed96c972bb5 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_975f45090a0a7195351faca8f43caf75 = $(`<div id="html_975f45090a0a7195351faca8f43caf75" style="width: 100.0%; height: 100.0%;">IL GIARDINO SEGRETO</div>`)[0];
+                popup_0ddc72460084d35251f22ed96c972bb5.setContent(html_975f45090a0a7195351faca8f43caf75);
+            
+        
+
+        circle_marker_55538f4bec13fccdddb3e4c92af9d2c7.bindPopup(popup_0ddc72460084d35251f22ed96c972bb5)
+        ;
+
+        
+    
+    
+            circle_marker_55538f4bec13fccdddb3e4c92af9d2c7.bindTooltip(
+                `<div>
+                     <b>IL GIARDINO SEGRETO</b><br>Servizio: NIDO D'INFANZIA<br>Istituto: IL GIARDINO SEGRETO<br>Indirizzo: VICOLO BORCHETTA 5<extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_c2975e66bee30844d0f7e643f0cb5aa1 = L.circleMarker(
+                [44.48977434944751, 11.337596016379136],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_244917066fa4e5685fa673cc5c35e755);
+        
+    
+        var popup_b5bad58af412028bfb508d5a833bdf72 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_62a59ea7abdc9054173cbe3d58cf3db3 = $(`<div id="html_62a59ea7abdc9054173cbe3d58cf3db3" style="width: 100.0%; height: 100.0%;">SANT'ALBERTO MAGNO</div>`)[0];
+                popup_b5bad58af412028bfb508d5a833bdf72.setContent(html_62a59ea7abdc9054173cbe3d58cf3db3);
+            
+        
+
+        circle_marker_c2975e66bee30844d0f7e643f0cb5aa1.bindPopup(popup_b5bad58af412028bfb508d5a833bdf72)
+        ;
+
+        
+    
+    
+            circle_marker_c2975e66bee30844d0f7e643f0cb5aa1.bindTooltip(
+                `<div>
+                     <b>SANT'ALBERTO MAGNO</b><br>Servizio: SCUOLA PRIMARIA<br>Istituto: SANT'ALBERTO MAGNO<br>Indirizzo: VIA PALESTRO 6<extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_96adcfc4bb74176b847c72dcab5fc4e3 = L.circleMarker(
+                [44.49691320089008, 11.339301245225862],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_244917066fa4e5685fa673cc5c35e755);
+        
+    
+        var popup_797a10bc141b0236e54061e1dac0224b = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_539c37a055cc6623d11626a359942539 = $(`<div id="html_539c37a055cc6623d11626a359942539" style="width: 100.0%; height: 100.0%;">MINGHETTI (SEDE CENTRALE)</div>`)[0];
+                popup_797a10bc141b0236e54061e1dac0224b.setContent(html_539c37a055cc6623d11626a359942539);
+            
+        
+
+        circle_marker_96adcfc4bb74176b847c72dcab5fc4e3.bindPopup(popup_797a10bc141b0236e54061e1dac0224b)
+        ;
+
+        
+    
+    
+            circle_marker_96adcfc4bb74176b847c72dcab5fc4e3.bindTooltip(
+                `<div>
+                     <b>MINGHETTI (SEDE CENTRALE)</b><br>Servizio: SCUOLA SECONDARIA DI SECONDO GRADO<br>Istituto: MINGHETTI<br>Indirizzo: VIA NAZARIO SAURO 18<extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_ba41a926aac571f763b18d044f3e514b = L.circleMarker(
+                [44.50314538599104, 11.336005098098578],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_244917066fa4e5685fa673cc5c35e755);
+        
+    
+        var popup_3e485421edd2e4ea31f8d1cce97118a7 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_5d25e6edaea18c36bdf5f447d90ca1e7 = $(`<div id="html_5d25e6edaea18c36bdf5f447d90ca1e7" style="width: 100.0%; height: 100.0%;">GALVANI (SEDE DISTACCATA)</div>`)[0];
+                popup_3e485421edd2e4ea31f8d1cce97118a7.setContent(html_5d25e6edaea18c36bdf5f447d90ca1e7);
+            
+        
+
+        circle_marker_ba41a926aac571f763b18d044f3e514b.bindPopup(popup_3e485421edd2e4ea31f8d1cce97118a7)
+        ;
+
+        
+    
+    
+            circle_marker_ba41a926aac571f763b18d044f3e514b.bindTooltip(
+                `<div>
+                     <b>GALVANI (SEDE DISTACCATA)</b><br>Servizio: SCUOLA SECONDARIA DI SECONDO GRADO<br>Istituto: GALVANI<br>Indirizzo: VIA DON GIOVANNI MINZONI 17<extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_c99cc5857d158f7e5fa97aa4eb3c8d9b = L.circleMarker(
+                [44.48964390386821, 11.335978389475923],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_244917066fa4e5685fa673cc5c35e755);
+        
+    
+        var popup_5cadc63bfa61246dc49419e442fcf04d = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_6422317402f372047ff8e07d529fcb0a = $(`<div id="html_6422317402f372047ff8e07d529fcb0a" style="width: 100.0%; height: 100.0%;">AQUILONE</div>`)[0];
+                popup_5cadc63bfa61246dc49419e442fcf04d.setContent(html_6422317402f372047ff8e07d529fcb0a);
+            
+        
+
+        circle_marker_c99cc5857d158f7e5fa97aa4eb3c8d9b.bindPopup(popup_5cadc63bfa61246dc49419e442fcf04d)
+        ;
+
+        
+    
+    
+            circle_marker_c99cc5857d158f7e5fa97aa4eb3c8d9b.bindTooltip(
+                `<div>
+                     <b>AQUILONE</b><br>Servizio: NIDO D'INFANZIA<br>Istituto: COMUNE DI BOLOGNA<br>Indirizzo: VIA DEI TESSITORI 4<extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_a1be81b462a1ccb5c5c590410f45abd5 = L.circleMarker(
+                [44.486756361544266, 11.350940947119344],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_244917066fa4e5685fa673cc5c35e755);
+        
+    
+        var popup_c6cdb5853df94c63090ed9a5ebe1bced = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_5b1cea487ab55979b1bec4878251d855 = $(`<div id="html_5b1cea487ab55979b1bec4878251d855" style="width: 100.0%; height: 100.0%;">LA TORTA IN CIELO</div>`)[0];
+                popup_c6cdb5853df94c63090ed9a5ebe1bced.setContent(html_5b1cea487ab55979b1bec4878251d855);
+            
+        
+
+        circle_marker_a1be81b462a1ccb5c5c590410f45abd5.bindPopup(popup_c6cdb5853df94c63090ed9a5ebe1bced)
+        ;
+
+        
+    
+    
+            circle_marker_a1be81b462a1ccb5c5c590410f45abd5.bindTooltip(
+                `<div>
+                     <b>LA TORTA IN CIELO</b><br>Servizio: NIDO D'INFANZIA<br>Istituto: LA TORTA IN CIELO<br>Indirizzo: VIA ORFEO 32<extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_fefc61f6bdaf45e170b194bfe25cb3b4 = L.circleMarker(
+                [44.49338847743468, 11.35536284172831],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_244917066fa4e5685fa673cc5c35e755);
+        
+    
+        var popup_5b9bcb69ab1a019fa3d2a05b5e5163a6 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_2be56de0cd86d1a2247317ce6d82ea90 = $(`<div id="html_2be56de0cd86d1a2247317ce6d82ea90" style="width: 100.0%; height: 100.0%;">LAURA BASSI (SEDE DISTACCATA)</div>`)[0];
+                popup_5b9bcb69ab1a019fa3d2a05b5e5163a6.setContent(html_2be56de0cd86d1a2247317ce6d82ea90);
+            
+        
+
+        circle_marker_fefc61f6bdaf45e170b194bfe25cb3b4.bindPopup(popup_5b9bcb69ab1a019fa3d2a05b5e5163a6)
+        ;
+
+        
+    
+    
+            circle_marker_fefc61f6bdaf45e170b194bfe25cb3b4.bindTooltip(
+                `<div>
+                     <b>LAURA BASSI (SEDE DISTACCATA)</b><br>Servizio: SCUOLA SECONDARIA DI SECONDO GRADO<br>Istituto: LAURA BASSI<br>Indirizzo: VIA BROCCAINDOSSO 48<extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_c6daa2bedb9156a7af412b0493013b2c = L.circleMarker(
+                [44.49177861104734, 11.32954359994086],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_244917066fa4e5685fa673cc5c35e755);
+        
+    
+        var popup_3d41c35c9a57d274c74efa789f493f9e = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_e020e4dbec019fcec2117ae958238ed2 = $(`<div id="html_e020e4dbec019fcec2117ae958238ed2" style="width: 100.0%; height: 100.0%;">RIGHI (SEDE CENTRALE)</div>`)[0];
+                popup_3d41c35c9a57d274c74efa789f493f9e.setContent(html_e020e4dbec019fcec2117ae958238ed2);
+            
+        
+
+        circle_marker_c6daa2bedb9156a7af412b0493013b2c.bindPopup(popup_3d41c35c9a57d274c74efa789f493f9e)
+        ;
+
+        
+    
+    
+            circle_marker_c6daa2bedb9156a7af412b0493013b2c.bindTooltip(
+                `<div>
+                     <b>RIGHI (SEDE CENTRALE)</b><br>Servizio: SCUOLA SECONDARIA DI SECONDO GRADO<br>Istituto: RIGHI<br>Indirizzo: VIALE CARLO PEPOLI 3<extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_8e3747b8ef7b3446844bc6d9cef547f7 = L.circleMarker(
+                [44.49801199689685, 11.327565289141692],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_244917066fa4e5685fa673cc5c35e755);
+        
+    
+        var popup_8f86934f61b1b6ad1e7a51b0ab4899a9 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_2d2a7fdb51bddac45e9f28520bffbc80 = $(`<div id="html_2d2a7fdb51bddac45e9f28520bffbc80" style="width: 100.0%; height: 100.0%;">CPIA 2</div>`)[0];
+                popup_8f86934f61b1b6ad1e7a51b0ab4899a9.setContent(html_2d2a7fdb51bddac45e9f28520bffbc80);
+            
+        
+
+        circle_marker_8e3747b8ef7b3446844bc6d9cef547f7.bindPopup(popup_8f86934f61b1b6ad1e7a51b0ab4899a9)
+        ;
+
+        
+    
+    
+            circle_marker_8e3747b8ef7b3446844bc6d9cef547f7.bindTooltip(
+                `<div>
+                     <b>CPIA 2</b><br>Servizio: SCUOLA SECONDARIA DI SECONDO GRADO<br>Istituto: nan<br>Indirizzo: VIALE GIOVANNI VICINI 19<extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_67bb5ef6fd0e62d1d5fe1c0ee0f87df3 = L.circleMarker(
+                [44.49133436221201, 11.334703254447062],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_244917066fa4e5685fa673cc5c35e755);
+        
+    
+        var popup_c6074b94544eb30b4531482a93ffaaec = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_373710a954cf537de82a327c746dc849 = $(`<div id="html_373710a954cf537de82a327c746dc849" style="width: 100.0%; height: 100.0%;">LICEO STEAM INTERNATIONAL QUADRIENNALE</div>`)[0];
+                popup_c6074b94544eb30b4531482a93ffaaec.setContent(html_373710a954cf537de82a327c746dc849);
+            
+        
+
+        circle_marker_67bb5ef6fd0e62d1d5fe1c0ee0f87df3.bindPopup(popup_c6074b94544eb30b4531482a93ffaaec)
+        ;
+
+        
+    
+    
+            circle_marker_67bb5ef6fd0e62d1d5fe1c0ee0f87df3.bindTooltip(
+                `<div>
+                     <b>LICEO STEAM INTERNATIONAL QUADRIENNALE</b><br>Servizio: SCUOLA SECONDARIA DI SECONDO GRADO<br>Istituto: STEAM INTERNATIONAL QUADRIENNALE<br>Indirizzo: VIA NOSADELLA 47<extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_4288ea72e63f8b72c4150579004bc058 = L.circleMarker(
+                [44.493546752231914, 11.334177429151461],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_244917066fa4e5685fa673cc5c35e755);
+        
+    
+        var popup_13e612f698b3ddeaa7ac91bf97c868bc = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_a94c51e6fb7c82f788d06d12a5efac1d = $(`<div id="html_a94c51e6fb7c82f788d06d12a5efac1d" style="width: 100.0%; height: 100.0%;">MANZOLINI</div>`)[0];
+                popup_13e612f698b3ddeaa7ac91bf97c868bc.setContent(html_a94c51e6fb7c82f788d06d12a5efac1d);
+            
+        
+
+        circle_marker_4288ea72e63f8b72c4150579004bc058.bindPopup(popup_13e612f698b3ddeaa7ac91bf97c868bc)
+        ;
+
+        
+    
+    
+            circle_marker_4288ea72e63f8b72c4150579004bc058.bindTooltip(
+                `<div>
+                     <b>MANZOLINI</b><br>Servizio: SCUOLA PRIMARIA<br>Istituto: ISTITUTO COMPRENSIVO N. 08<br>Indirizzo: VIA S.ISAIA 16<extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_2a910470fe3cc822e179caf69be1f56a = L.circleMarker(
+                [44.50234335898709, 11.349065077229278],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_244917066fa4e5685fa673cc5c35e755);
+        
+    
+        var popup_b4b4ed996987bd47e0037ac5008e7f58 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_fba382bc645a0051c75ecfa2ef175faf = $(`<div id="html_fba382bc645a0051c75ecfa2ef175faf" style="width: 100.0%; height: 100.0%;">IRNERIO</div>`)[0];
+                popup_b4b4ed996987bd47e0037ac5008e7f58.setContent(html_fba382bc645a0051c75ecfa2ef175faf);
+            
+        
+
+        circle_marker_2a910470fe3cc822e179caf69be1f56a.bindPopup(popup_b4b4ed996987bd47e0037ac5008e7f58)
+        ;
+
+        
+    
+    
+            circle_marker_2a910470fe3cc822e179caf69be1f56a.bindTooltip(
+                `<div>
+                     <b>IRNERIO</b><br>Servizio: SCUOLA SECONDARIA DI PRIMO GRADO<br>Istituto: ISTITUTO COMPRENSIVO N. 06<br>Indirizzo: VIA ANGELO FINELLI 2<extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_1a0b3a51102f9a3ced142fd29c12c087 = L.circleMarker(
+                [44.49994203996859, 11.331558224741656],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_244917066fa4e5685fa673cc5c35e755);
+        
+    
+        var popup_e1a76416212852b43fa8047c4653c692 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_5e2db4de3d0e77604ecf7ce7c08b99f3 = $(`<div id="html_5e2db4de3d0e77604ecf7ce7c08b99f3" style="width: 100.0%; height: 100.0%;">GANDINO</div>`)[0];
+                popup_e1a76416212852b43fa8047c4653c692.setContent(html_5e2db4de3d0e77604ecf7ce7c08b99f3);
+            
+        
+
+        circle_marker_1a0b3a51102f9a3ced142fd29c12c087.bindPopup(popup_e1a76416212852b43fa8047c4653c692)
+        ;
+
+        
+    
+    
+            circle_marker_1a0b3a51102f9a3ced142fd29c12c087.bindTooltip(
+                `<div>
+                     <b>GANDINO</b><br>Servizio: SCUOLA SECONDARIA DI PRIMO GRADO<br>Istituto: ISTITUTO COMPRENSIVO N. 17<br>Indirizzo: VIA GRAZIANO 8<extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_5ce52e557d3384156ef9068c9d850f6a = L.circleMarker(
+                [44.48818856479583, 11.339576848718103],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_244917066fa4e5685fa673cc5c35e755);
+        
+    
+        var popup_53e25101603cfa9837674177ad9eca49 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d2c30518211984648968f03ef90cd8d6 = $(`<div id="html_d2c30518211984648968f03ef90cd8d6" style="width: 100.0%; height: 100.0%;">SAN LUIGI</div>`)[0];
+                popup_53e25101603cfa9837674177ad9eca49.setContent(html_d2c30518211984648968f03ef90cd8d6);
+            
+        
+
+        circle_marker_5ce52e557d3384156ef9068c9d850f6a.bindPopup(popup_53e25101603cfa9837674177ad9eca49)
+        ;
+
+        
+    
+    
+            circle_marker_5ce52e557d3384156ef9068c9d850f6a.bindTooltip(
+                `<div>
+                     <b>SAN LUIGI</b><br>Servizio: SCUOLA SECONDARIA DI PRIMO GRADO<br>Istituto: ISTITUTO SAN LUIGI<br>Indirizzo: VIA D'AZEGLIO 55<extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_40f34af33fc65df9c3fea5987e3a500f = L.circleMarker(
+                [44.48691483151359, 11.35462760636298],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_244917066fa4e5685fa673cc5c35e755);
+        
+    
+        var popup_a841bcba216f5fd737f1c329e5b7a8d1 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d8161c863b078a2e0e87345d7d9b5269 = $(`<div id="html_d8161c863b078a2e0e87345d7d9b5269" style="width: 100.0%; height: 100.0%;">CARDUCCI</div>`)[0];
+                popup_a841bcba216f5fd737f1c329e5b7a8d1.setContent(html_d8161c863b078a2e0e87345d7d9b5269);
+            
+        
+
+        circle_marker_40f34af33fc65df9c3fea5987e3a500f.bindPopup(popup_a841bcba216f5fd737f1c329e5b7a8d1)
+        ;
+
+        
+    
+    
+            circle_marker_40f34af33fc65df9c3fea5987e3a500f.bindTooltip(
+                `<div>
+                     <b>CARDUCCI</b><br>Servizio: SCUOLA DELL'INFANZIA<br>Istituto: COMUNE DI BOLOGNA<br>Indirizzo: VIA DANTE 3<extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_61ff5967aba6fe16f4f663ad551b80b7 = L.circleMarker(
+                [44.48891911979205, 11.342155905972023],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_244917066fa4e5685fa673cc5c35e755);
+        
+    
+        var popup_4aab56a42024a32d41db9a0fe267a0a3 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_61fd065ecbd9dfda121f2a0afbec021c = $(`<div id="html_61fd065ecbd9dfda121f2a0afbec021c" style="width: 100.0%; height: 100.0%;">PADIGLIONE</div>`)[0];
+                popup_4aab56a42024a32d41db9a0fe267a0a3.setContent(html_61fd065ecbd9dfda121f2a0afbec021c);
+            
+        
+
+        circle_marker_61ff5967aba6fe16f4f663ad551b80b7.bindPopup(popup_4aab56a42024a32d41db9a0fe267a0a3)
+        ;
+
+        
+    
+    
+            circle_marker_61ff5967aba6fe16f4f663ad551b80b7.bindTooltip(
+                `<div>
+                     <b>PADIGLIONE</b><br>Servizio: SCUOLA DELL'INFANZIA<br>Istituto: COMUNE DI BOLOGNA<br>Indirizzo: VIA DE' MATTUIANI 1<extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_5c406d335882911c90067d8e04fc8eff = L.circleMarker(
+                [44.491302974689894, 11.337361953739846],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_244917066fa4e5685fa673cc5c35e755);
+        
+    
+        var popup_c3f82607041c9dd9b42e88a6121f552b = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_27f89c80903180e09e4a271dc43458c4 = $(`<div id="html_27f89c80903180e09e4a271dc43458c4" style="width: 100.0%; height: 100.0%;">MINGHETTI (SEDE DISTACCATA)</div>`)[0];
+                popup_c3f82607041c9dd9b42e88a6121f552b.setContent(html_27f89c80903180e09e4a271dc43458c4);
+            
+        
+
+        circle_marker_5c406d335882911c90067d8e04fc8eff.bindPopup(popup_c3f82607041c9dd9b42e88a6121f552b)
+        ;
+
+        
+    
+    
+            circle_marker_5c406d335882911c90067d8e04fc8eff.bindTooltip(
+                `<div>
+                     <b>MINGHETTI (SEDE DISTACCATA)</b><br>Servizio: SCUOLA SECONDARIA DI SECONDO GRADO<br>Istituto: MINGHETTI<br>Indirizzo: VICOLO STRADELLACCIO 2<extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_f2d3cb78fb531e71be04923fcf1dbb8f = L.circleMarker(
+                [44.494118518221995, 11.332116331682908],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_244917066fa4e5685fa673cc5c35e755);
+        
+    
+        var popup_18f65a0250a75f78913270fefa611979 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d5fd784e98e6817da27f7f26cf46fe4b = $(`<div id="html_d5fd784e98e6817da27f7f26cf46fe4b" style="width: 100.0%; height: 100.0%;">LAURA BASSI (SEDE CENTRALE)</div>`)[0];
+                popup_18f65a0250a75f78913270fefa611979.setContent(html_d5fd784e98e6817da27f7f26cf46fe4b);
+            
+        
+
+        circle_marker_f2d3cb78fb531e71be04923fcf1dbb8f.bindPopup(popup_18f65a0250a75f78913270fefa611979)
+        ;
+
+        
+    
+    
+            circle_marker_f2d3cb78fb531e71be04923fcf1dbb8f.bindTooltip(
+                `<div>
+                     <b>LAURA BASSI (SEDE CENTRALE)</b><br>Servizio: SCUOLA SECONDARIA DI SECONDO GRADO<br>Istituto: LAURA BASSI<br>Indirizzo: VIA S.ISAIA 35<extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_60e00e823802ff4e71f005b9b81199fa = L.circleMarker(
+                [44.485896811426976, 11.351932182047364],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_244917066fa4e5685fa673cc5c35e755);
+        
+    
+        var popup_548be4cb19fef36b82a9640663bb7076 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_5672eebd46afc8943556e1a2f337d865 = $(`<div id="html_5672eebd46afc8943556e1a2f337d865" style="width: 100.0%; height: 100.0%;">SAN PIETRO MARTIRE</div>`)[0];
+                popup_548be4cb19fef36b82a9640663bb7076.setContent(html_5672eebd46afc8943556e1a2f337d865);
+            
+        
+
+        circle_marker_60e00e823802ff4e71f005b9b81199fa.bindPopup(popup_548be4cb19fef36b82a9640663bb7076)
+        ;
+
+        
+    
+    
+            circle_marker_60e00e823802ff4e71f005b9b81199fa.bindTooltip(
+                `<div>
+                     <b>SAN PIETRO MARTIRE</b><br>Servizio: SCUOLA DELL'INFANZIA<br>Istituto: SAN PIETRO MARTIRE<br>Indirizzo: VIA ORFEO 29<extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_c5bb04494f5786177de66b2997a6b917 = L.circleMarker(
+                [44.48977434944751, 11.337596016379136],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_244917066fa4e5685fa673cc5c35e755);
+        
+    
+        var popup_912e8be16027c3741a2a4415d566f75e = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_f4a949d2f6b5c74de129b1e301b40378 = $(`<div id="html_f4a949d2f6b5c74de129b1e301b40378" style="width: 100.0%; height: 100.0%;">SANT'ALBERTO MAGNO</div>`)[0];
+                popup_912e8be16027c3741a2a4415d566f75e.setContent(html_f4a949d2f6b5c74de129b1e301b40378);
+            
+        
+
+        circle_marker_c5bb04494f5786177de66b2997a6b917.bindPopup(popup_912e8be16027c3741a2a4415d566f75e)
+        ;
+
+        
+    
+    
+            circle_marker_c5bb04494f5786177de66b2997a6b917.bindTooltip(
+                `<div>
+                     <b>SANT'ALBERTO MAGNO</b><br>Servizio: SCUOLA DELL'INFANZIA<br>Istituto: SANT'ALBERTO MAGNO<br>Indirizzo: VIA PALESTRO 6<extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_814683eddb4250318a874d192e9c0fbc = L.circleMarker(
+                [44.485415181237265, 11.351142058394503],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_244917066fa4e5685fa673cc5c35e755);
+        
+    
+        var popup_b654584138c32412dc2045b1c3b33d56 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_4aef0d6f9e66df15a1f5ad8ec2072d9b = $(`<div id="html_4aef0d6f9e66df15a1f5ad8ec2072d9b" style="width: 100.0%; height: 100.0%;">GOZZADINI</div>`)[0];
+                popup_b654584138c32412dc2045b1c3b33d56.setContent(html_4aef0d6f9e66df15a1f5ad8ec2072d9b);
+            
+        
+
+        circle_marker_814683eddb4250318a874d192e9c0fbc.bindPopup(popup_b654584138c32412dc2045b1c3b33d56)
+        ;
+
+        
+    
+    
+            circle_marker_814683eddb4250318a874d192e9c0fbc.bindTooltip(
+                `<div>
+                     <b>GOZZADINI</b><br>Servizio: NIDO D'INFANZIA<br>Istituto: COMUNE DI BOLOGNA<br>Indirizzo: VIALE GIOVANNI GOZZADINI 11<extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_3abfcafd92730b8d36d0900904285883 = L.circleMarker(
+                [44.48691483151359, 11.35462760636298],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_244917066fa4e5685fa673cc5c35e755);
+        
+    
+        var popup_8790162a8dce6cfc89c549c7011d4cb2 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_a3ea8cae9a5f31476a10af2a73d767ff = $(`<div id="html_a3ea8cae9a5f31476a10af2a73d767ff" style="width: 100.0%; height: 100.0%;">CARDUCCI</div>`)[0];
+                popup_8790162a8dce6cfc89c549c7011d4cb2.setContent(html_a3ea8cae9a5f31476a10af2a73d767ff);
+            
+        
+
+        circle_marker_3abfcafd92730b8d36d0900904285883.bindPopup(popup_8790162a8dce6cfc89c549c7011d4cb2)
+        ;
+
+        
+    
+    
+            circle_marker_3abfcafd92730b8d36d0900904285883.bindTooltip(
+                `<div>
+                     <b>CARDUCCI</b><br>Servizio: SCUOLA PRIMARIA<br>Istituto: ISTITUTO COMPRENSIVO N. 20<br>Indirizzo: VIA DANTE 3<extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_eac5772a705dd8d380d416bce2795780 = L.circleMarker(
+                [44.4946222748151, 11.329301474814947],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_244917066fa4e5685fa673cc5c35e755);
+        
+    
+        var popup_094a35f7935ef4173a9c999e1f7f1642 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_27d18e66de7d898b1fcd11eb3a28adc2 = $(`<div id="html_27d18e66de7d898b1fcd11eb3a28adc2" style="width: 100.0%; height: 100.0%;">MALPIGHI</div>`)[0];
+                popup_094a35f7935ef4173a9c999e1f7f1642.setContent(html_27d18e66de7d898b1fcd11eb3a28adc2);
+            
+        
+
+        circle_marker_eac5772a705dd8d380d416bce2795780.bindPopup(popup_094a35f7935ef4173a9c999e1f7f1642)
+        ;
+
+        
+    
+    
+            circle_marker_eac5772a705dd8d380d416bce2795780.bindTooltip(
+                `<div>
+                     <b>MALPIGHI</b><br>Servizio: SCUOLA SECONDARIA DI SECONDO GRADO<br>Istituto: MALPIGHI<br>Indirizzo: VIA S.ISAIA 77<extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_28dff346c1a540ff6ba4046f084cccf5 = L.circleMarker(
+                [44.49845081512427, 11.327417990859047],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_244917066fa4e5685fa673cc5c35e755);
+        
+    
+        var popup_83a39e0030ef06b26392964d72b39427 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_69b83fa26793907f93e8ec480c2e0863 = $(`<div id="html_69b83fa26793907f93e8ec480c2e0863" style="width: 100.0%; height: 100.0%;">ALDROVANDI RUBBIANI (SEDE DISTACCATA)</div>`)[0];
+                popup_83a39e0030ef06b26392964d72b39427.setContent(html_69b83fa26793907f93e8ec480c2e0863);
+            
+        
+
+        circle_marker_28dff346c1a540ff6ba4046f084cccf5.bindPopup(popup_83a39e0030ef06b26392964d72b39427)
+        ;
+
+        
+    
+    
+            circle_marker_28dff346c1a540ff6ba4046f084cccf5.bindTooltip(
+                `<div>
+                     <b>ALDROVANDI RUBBIANI (SEDE DISTACCATA)</b><br>Servizio: SCUOLA SECONDARIA DI SECONDO GRADO<br>Istituto: ALDROVANDI RUBBIANI<br>Indirizzo: VIALE GIOVANNI VICINI 21<extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_f29961c300a2622a2765ac91214bcd75 = L.circleMarker(
+                [44.48977434944751, 11.337596016379136],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_244917066fa4e5685fa673cc5c35e755);
+        
+    
+        var popup_1e9ee5c1404ad345d81aba3b1e8ba7c1 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_8658c94f012d6d6dc1134d4f04b69d0f = $(`<div id="html_8658c94f012d6d6dc1134d4f04b69d0f" style="width: 100.0%; height: 100.0%;">ISTITUTO SANT'ALBERTO MAGNO</div>`)[0];
+                popup_1e9ee5c1404ad345d81aba3b1e8ba7c1.setContent(html_8658c94f012d6d6dc1134d4f04b69d0f);
+            
+        
+
+        circle_marker_f29961c300a2622a2765ac91214bcd75.bindPopup(popup_1e9ee5c1404ad345d81aba3b1e8ba7c1)
+        ;
+
+        
+    
+    
+            circle_marker_f29961c300a2622a2765ac91214bcd75.bindTooltip(
+                `<div>
+                     <b>ISTITUTO SANT'ALBERTO MAGNO</b><br>Servizio: SCUOLA SECONDARIA DI SECONDO GRADO<br>Istituto: ISTITUTO SANT'ALBERTO MAGNO<br>Indirizzo: VIA PALESTRO 6<extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_e647e66bb1a06c553f6b6283d339d153 = L.circleMarker(
+                [44.5033937304216, 11.344143256265303],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_244917066fa4e5685fa673cc5c35e755);
+        
+    
+        var popup_314c73cc5f19996d13620dfb4923592d = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_7a6afccaa007e9d96df5d7abf689e868 = $(`<div id="html_7a6afccaa007e9d96df5d7abf689e868" style="width: 100.0%; height: 100.0%;">DE AMICIS</div>`)[0];
+                popup_314c73cc5f19996d13620dfb4923592d.setContent(html_7a6afccaa007e9d96df5d7abf689e868);
+            
+        
+
+        circle_marker_e647e66bb1a06c553f6b6283d339d153.bindPopup(popup_314c73cc5f19996d13620dfb4923592d)
+        ;
+
+        
+    
+    
+            circle_marker_e647e66bb1a06c553f6b6283d339d153.bindTooltip(
+                `<div>
+                     <b>DE AMICIS</b><br>Servizio: SCUOLA PRIMARIA<br>Istituto: ISTITUTO COMPRENSIVO N. 18<br>Indirizzo: VIA GALLIERA 74<extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_142f531a60963354091a684947c57e84 = L.circleMarker(
+                [44.50039279671308, 11.330976451198012],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_244917066fa4e5685fa673cc5c35e755);
+        
+    
+        var popup_91803f3bb25c3edc4f80d9619e9c9165 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_771c72d5bf97ff19e811293b8d0198a0 = $(`<div id="html_771c72d5bf97ff19e811293b8d0198a0" style="width: 100.0%; height: 100.0%;">GUIDI</div>`)[0];
+                popup_91803f3bb25c3edc4f80d9619e9c9165.setContent(html_771c72d5bf97ff19e811293b8d0198a0);
+            
+        
+
+        circle_marker_142f531a60963354091a684947c57e84.bindPopup(popup_91803f3bb25c3edc4f80d9619e9c9165)
+        ;
+
+        
+    
+    
+            circle_marker_142f531a60963354091a684947c57e84.bindTooltip(
+                `<div>
+                     <b>GUIDI</b><br>Servizio: SCUOLA PRIMARIA<br>Istituto: ISTITUTO COMPRENSIVO N. 17<br>Indirizzo: VIA LUIGI CALORI 8<extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_b75241e60cc1f66c8e22c7fe740511cc = L.circleMarker(
+                [44.49282036705703, 11.333432920615621],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_244917066fa4e5685fa673cc5c35e755);
+        
+    
+        var popup_5f9827ed0a1d782794c990011b5edcf6 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_49dee20970a9c07fde8234093fa918e2 = $(`<div id="html_49dee20970a9c07fde8234093fa918e2" style="width: 100.0%; height: 100.0%;">ANNA SERRA PLESSO 2</div>`)[0];
+                popup_5f9827ed0a1d782794c990011b5edcf6.setContent(html_49dee20970a9c07fde8234093fa918e2);
+            
+        
+
+        circle_marker_b75241e60cc1f66c8e22c7fe740511cc.bindPopup(popup_5f9827ed0a1d782794c990011b5edcf6)
+        ;
+
+        
+    
+    
+            circle_marker_b75241e60cc1f66c8e22c7fe740511cc.bindTooltip(
+                `<div>
+                     <b>ANNA SERRA PLESSO 2</b><br>Servizio: SCUOLA DELL'INFANZIA<br>Istituto: COMUNE DI BOLOGNA<br>Indirizzo: VIA CA' SELVATICA 11<extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_248bbaf180a488e803cfac90162ef562 = L.circleMarker(
+                [44.493627589987724, 11.33373341552558],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_244917066fa4e5685fa673cc5c35e755);
+        
+    
+        var popup_2fabb1e2811e134b046bf81fcf0e5b4e = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_8012f66a9a9223d041358a6d30cedf13 = $(`<div id="html_8012f66a9a9223d041358a6d30cedf13" style="width: 100.0%; height: 100.0%;">MANZOLINI</div>`)[0];
+                popup_2fabb1e2811e134b046bf81fcf0e5b4e.setContent(html_8012f66a9a9223d041358a6d30cedf13);
+            
+        
+
+        circle_marker_248bbaf180a488e803cfac90162ef562.bindPopup(popup_2fabb1e2811e134b046bf81fcf0e5b4e)
+        ;
+
+        
+    
+    
+            circle_marker_248bbaf180a488e803cfac90162ef562.bindTooltip(
+                `<div>
+                     <b>MANZOLINI</b><br>Servizio: SCUOLA DELL'INFANZIA<br>Istituto: ISTITUTO COMPRENSIVO N. 08<br>Indirizzo: VIA S.ISAIA 20<extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_c9acf3346af5f1211b988174a55752bb = L.circleMarker(
+                [44.48755776220723, 11.339766155505636],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_244917066fa4e5685fa673cc5c35e755);
+        
+    
+        var popup_ce847855fcc85df97b32efff2e7a2c92 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_e17bac6d96f41c61942b8c877780e4d5 = $(`<div id="html_e17bac6d96f41c61942b8c877780e4d5" style="width: 100.0%; height: 100.0%;">LAVINIA FONTANA</div>`)[0];
+                popup_ce847855fcc85df97b32efff2e7a2c92.setContent(html_e17bac6d96f41c61942b8c877780e4d5);
+            
+        
+
+        circle_marker_c9acf3346af5f1211b988174a55752bb.bindPopup(popup_ce847855fcc85df97b32efff2e7a2c92)
+        ;
+
+        
+    
+    
+            circle_marker_c9acf3346af5f1211b988174a55752bb.bindTooltip(
+                `<div>
+                     <b>LAVINIA FONTANA</b><br>Servizio: SCUOLA SECONDARIA DI PRIMO GRADO<br>Istituto: ISTITUTO COMPRENSIVO N. 19<br>Indirizzo: VIA D'AZEGLIO 82<extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_35bd5dc02fdfd47075d2f596bc181c3b = L.circleMarker(
+                [44.492796346001676, 11.333229984591828],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_244917066fa4e5685fa673cc5c35e755);
+        
+    
+        var popup_6d20908e6aaa963e80e27d495b659b6c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_2221f18d1e43141df270866cc9a1c1e9 = $(`<div id="html_2221f18d1e43141df270866cc9a1c1e9" style="width: 100.0%; height: 100.0%;">GUINIZELLI</div>`)[0];
+                popup_6d20908e6aaa963e80e27d495b659b6c.setContent(html_2221f18d1e43141df270866cc9a1c1e9);
+            
+        
+
+        circle_marker_35bd5dc02fdfd47075d2f596bc181c3b.bindPopup(popup_6d20908e6aaa963e80e27d495b659b6c)
+        ;
+
+        
+    
+    
+            circle_marker_35bd5dc02fdfd47075d2f596bc181c3b.bindTooltip(
+                `<div>
+                     <b>GUINIZELLI</b><br>Servizio: SCUOLA SECONDARIA DI PRIMO GRADO<br>Istituto: ISTITUTO COMPRENSIVO N. 08<br>Indirizzo: VIA CA' SELVATICA 11<extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_e1c581809c7e65cf37711946b65030a1 = L.circleMarker(
+                [44.49314051466098, 11.354174249777454],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_244917066fa4e5685fa673cc5c35e755);
+        
+    
+        var popup_9512d10aed338b8744b50574a3c14e5d = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_643748c4b6cc850f28daad0a2707f099 = $(`<div id="html_643748c4b6cc850f28daad0a2707f099" style="width: 100.0%; height: 100.0%;">ZAMBONI</div>`)[0];
+                popup_9512d10aed338b8744b50574a3c14e5d.setContent(html_643748c4b6cc850f28daad0a2707f099);
+            
+        
+
+        circle_marker_e1c581809c7e65cf37711946b65030a1.bindPopup(popup_9512d10aed338b8744b50574a3c14e5d)
+        ;
+
+        
+    
+    
+            circle_marker_e1c581809c7e65cf37711946b65030a1.bindTooltip(
+                `<div>
+                     <b>ZAMBONI</b><br>Servizio: SCUOLA PRIMARIA<br>Istituto: ISTITUTO COMPRENSIVO N. 16<br>Indirizzo: VICOLO BOLOGNETTI 8<extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_069db52c75d97ee075c540868e814dff = L.circleMarker(
+                [44.48615400929118, 11.350442884324927],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_244917066fa4e5685fa673cc5c35e755);
+        
+    
+        var popup_25635a092b23af231771e664adcd962a = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_1c0be83eb6959a581ab2f5e149fc5766 = $(`<div id="html_1c0be83eb6959a581ab2f5e149fc5766" style="width: 100.0%; height: 100.0%;">BARACCANO</div>`)[0];
+                popup_25635a092b23af231771e664adcd962a.setContent(html_1c0be83eb6959a581ab2f5e149fc5766);
+            
+        
+
+        circle_marker_069db52c75d97ee075c540868e814dff.bindPopup(popup_25635a092b23af231771e664adcd962a)
+        ;
+
+        
+    
+    
+            circle_marker_069db52c75d97ee075c540868e814dff.bindTooltip(
+                `<div>
+                     <b>BARACCANO</b><br>Servizio: SCUOLA DELL'INFANZIA<br>Istituto: COMUNE DI BOLOGNA<br>Indirizzo: VIA GIOVANNI PASCOLI 3<extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_154f37ac59f5bf218bc46681fa092a14 = L.circleMarker(
+                [44.49597942855501, 11.35007366166641],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_244917066fa4e5685fa673cc5c35e755);
+        
+    
+        var popup_0fc1cf930769353c0b33ca845593855e = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d7e2fbe17cc7909b72962aac0bf2c3cb = $(`<div id="html_d7e2fbe17cc7909b72962aac0bf2c3cb" style="width: 100.0%; height: 100.0%;">ZAMBONI</div>`)[0];
+                popup_0fc1cf930769353c0b33ca845593855e.setContent(html_d7e2fbe17cc7909b72962aac0bf2c3cb);
+            
+        
+
+        circle_marker_154f37ac59f5bf218bc46681fa092a14.bindPopup(popup_0fc1cf930769353c0b33ca845593855e)
+        ;
+
+        
+    
+    
+            circle_marker_154f37ac59f5bf218bc46681fa092a14.bindTooltip(
+                `<div>
+                     <b>ZAMBONI</b><br>Servizio: SCUOLA DELL'INFANZIA<br>Istituto: COMUNE DI BOLOGNA<br>Indirizzo: VIA ZAMBONI 15<extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_0fa15e6bad838e6d6286ccb3750977c6 = L.circleMarker(
+                [44.50039279671308, 11.330976451198012],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_244917066fa4e5685fa673cc5c35e755);
+        
+    
+        var popup_ec6040c72823f739531b1ff1a582153d = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_599337d368f49b1b088d50580d09c750 = $(`<div id="html_599337d368f49b1b088d50580d09c750" style="width: 100.0%; height: 100.0%;">GUIDI</div>`)[0];
+                popup_ec6040c72823f739531b1ff1a582153d.setContent(html_599337d368f49b1b088d50580d09c750);
+            
+        
+
+        circle_marker_0fa15e6bad838e6d6286ccb3750977c6.bindPopup(popup_ec6040c72823f739531b1ff1a582153d)
+        ;
+
+        
+    
+    
+            circle_marker_0fa15e6bad838e6d6286ccb3750977c6.bindTooltip(
+                `<div>
+                     <b>GUIDI</b><br>Servizio: SCUOLA DELL'INFANZIA<br>Istituto: ISTITUTO COMPRENSIVO N. 17<br>Indirizzo: VIA LUIGI CALORI 8<extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_f3dc174e594ba8ecbe4f921ed882dd5e = L.circleMarker(
+                [44.48818856479583, 11.339576848718103],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_244917066fa4e5685fa673cc5c35e755);
+        
+    
+        var popup_0c5f9f13d481863e509afa65bad6bf87 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_c9d1f496ca60309c7f5fdc82e75da04d = $(`<div id="html_c9d1f496ca60309c7f5fdc82e75da04d" style="width: 100.0%; height: 100.0%;">SAN LUIGI</div>`)[0];
+                popup_0c5f9f13d481863e509afa65bad6bf87.setContent(html_c9d1f496ca60309c7f5fdc82e75da04d);
+            
+        
+
+        circle_marker_f3dc174e594ba8ecbe4f921ed882dd5e.bindPopup(popup_0c5f9f13d481863e509afa65bad6bf87)
+        ;
+
+        
+    
+    
+            circle_marker_f3dc174e594ba8ecbe4f921ed882dd5e.bindTooltip(
+                `<div>
+                     <b>SAN LUIGI</b><br>Servizio: SCUOLA DELL'INFANZIA<br>Istituto: ISTITUTO SAN LUIGI<br>Indirizzo: VIA D'AZEGLIO 55<extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_985036735caeef2e14a355e36829841d = L.circleMarker(
+                [44.490760906600705, 11.334462006285667],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_244917066fa4e5685fa673cc5c35e755);
+        
+    
+        var popup_f46b8a2279c0d65af7c9fba4bc881607 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_1d68f2ef02f96d06576e773632cc788f = $(`<div id="html_1d68f2ef02f96d06576e773632cc788f" style="width: 100.0%; height: 100.0%;">AL CINEMA!</div>`)[0];
+                popup_f46b8a2279c0d65af7c9fba4bc881607.setContent(html_1d68f2ef02f96d06576e773632cc788f);
+            
+        
+
+        circle_marker_985036735caeef2e14a355e36829841d.bindPopup(popup_f46b8a2279c0d65af7c9fba4bc881607)
+        ;
+
+        
+    
+    
+            circle_marker_985036735caeef2e14a355e36829841d.bindTooltip(
+                `<div>
+                     <b>AL CINEMA!</b><br>Servizio: SCUOLA DELL'INFANZIA<br>Istituto: FONDAZIONE GUALANDI<br>Indirizzo: VIA NOSADELLA 51<extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_f5b17432dc535c2f2bd7d581ba829186 = L.circleMarker(
+                [44.48818856479583, 11.339576848718103],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(feature_group_244917066fa4e5685fa673cc5c35e755);
+        
+    
+        var popup_2346765bd511c1d4d30316626a86c8ad = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_b6bffd7e39b4b2be6f5f7f208c1a4622 = $(`<div id="html_b6bffd7e39b4b2be6f5f7f208c1a4622" style="width: 100.0%; height: 100.0%;">SAN LUIGI</div>`)[0];
+                popup_2346765bd511c1d4d30316626a86c8ad.setContent(html_b6bffd7e39b4b2be6f5f7f208c1a4622);
+            
+        
+
+        circle_marker_f5b17432dc535c2f2bd7d581ba829186.bindPopup(popup_2346765bd511c1d4d30316626a86c8ad)
+        ;
+
+        
+    
+    
+            circle_marker_f5b17432dc535c2f2bd7d581ba829186.bindTooltip(
+                `<div>
+                     <b>SAN LUIGI</b><br>Servizio: SCUOLA PRIMARIA<br>Istituto: ISTITUTO SAN LUIGI<br>Indirizzo: VIA D'AZEGLIO 55<extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var feature_group_f714857175d53920d0768eb0d19e3c6a = L.featureGroup(
+                {}
+            ).addTo(map_5f510643b1297031cdc8b53d5043fbeb);
+        
+    
+            var circle_marker_1fb7427867a5aa90299b777cc9346cf0 = L.circleMarker(
+                [44.4912005724502, 11.329863207526603],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f714857175d53920d0768eb0d19e3c6a);
+        
+    
+        var popup_395fe902d2505b2e956da4f7e573ba6c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_5e81b423d6dd2f8e023fd06cc66197fc = $(`<div id="html_5e81b423d6dd2f8e023fd06cc66197fc" style="width: 100.0%; height: 100.0%;">Porta Saragozza</div>`)[0];
+                popup_395fe902d2505b2e956da4f7e573ba6c.setContent(html_5e81b423d6dd2f8e023fd06cc66197fc);
+            
+        
+
+        circle_marker_1fb7427867a5aa90299b777cc9346cf0.bindPopup(popup_395fe902d2505b2e956da4f7e573ba6c)
+        ;
+
+        
+    
+    
+            circle_marker_1fb7427867a5aa90299b777cc9346cf0.bindTooltip(
+                `<div>
+                     <b>Porta Saragozza</b><extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_61d6eaa9cccfd3ba2e5e7a405d2f9ae6 = L.circleMarker(
+                [44.49954001528024, 11.327157797268898],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f714857175d53920d0768eb0d19e3c6a);
+        
+    
+        var popup_5862d399933143c620531bad36a5f80a = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_7ed490918a6c2c0b560c8b2f97c5e4fb = $(`<div id="html_7ed490918a6c2c0b560c8b2f97c5e4fb" style="width: 100.0%; height: 100.0%;">Porta San Felice</div>`)[0];
+                popup_5862d399933143c620531bad36a5f80a.setContent(html_7ed490918a6c2c0b560c8b2f97c5e4fb);
+            
+        
+
+        circle_marker_61d6eaa9cccfd3ba2e5e7a405d2f9ae6.bindPopup(popup_5862d399933143c620531bad36a5f80a)
+        ;
+
+        
+    
+    
+            circle_marker_61d6eaa9cccfd3ba2e5e7a405d2f9ae6.bindTooltip(
+                `<div>
+                     <b>Porta San Felice</b><extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_3c5b3b86ddeb4c5ffb60dd0cf42b1e6d = L.circleMarker(
+                [44.50321594653266, 11.333574503784252],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f714857175d53920d0768eb0d19e3c6a);
+        
+    
+        var popup_d68bb82f6f477dab41713535ec120a7b = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_57d7a22dfe6e35efd23e97c351cb5c77 = $(`<div id="html_57d7a22dfe6e35efd23e97c351cb5c77" style="width: 100.0%; height: 100.0%;">Porta Lame</div>`)[0];
+                popup_d68bb82f6f477dab41713535ec120a7b.setContent(html_57d7a22dfe6e35efd23e97c351cb5c77);
+            
+        
+
+        circle_marker_3c5b3b86ddeb4c5ffb60dd0cf42b1e6d.bindPopup(popup_d68bb82f6f477dab41713535ec120a7b)
+        ;
+
+        
+    
+    
+            circle_marker_3c5b3b86ddeb4c5ffb60dd0cf42b1e6d.bindTooltip(
+                `<div>
+                     <b>Porta Lame</b><extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_276f0e0d15f2a786a6e7fabfef898159 = L.circleMarker(
+                [44.502879537029294, 11.352576531365193],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f714857175d53920d0768eb0d19e3c6a);
+        
+    
+        var popup_338cab76ae729a8a4d12e87ed6f45dbd = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d3eef81ff6f90d5579f9e5d9464dacb3 = $(`<div id="html_d3eef81ff6f90d5579f9e5d9464dacb3" style="width: 100.0%; height: 100.0%;">Porta Mascarella</div>`)[0];
+                popup_338cab76ae729a8a4d12e87ed6f45dbd.setContent(html_d3eef81ff6f90d5579f9e5d9464dacb3);
+            
+        
+
+        circle_marker_276f0e0d15f2a786a6e7fabfef898159.bindPopup(popup_338cab76ae729a8a4d12e87ed6f45dbd)
+        ;
+
+        
+    
+    
+            circle_marker_276f0e0d15f2a786a6e7fabfef898159.bindTooltip(
+                `<div>
+                     <b>Porta Mascarella</b><extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_dcd9fceda69a2e5cb98d2a72c64d70db = L.circleMarker(
+                [44.49874634755899, 11.356821665186462],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f714857175d53920d0768eb0d19e3c6a);
+        
+    
+        var popup_5cd09adff2922fc7ee9274188a43ec14 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_fa9db0857aff4dda664a556cebf82156 = $(`<div id="html_fa9db0857aff4dda664a556cebf82156" style="width: 100.0%; height: 100.0%;">Porta San Donato</div>`)[0];
+                popup_5cd09adff2922fc7ee9274188a43ec14.setContent(html_fa9db0857aff4dda664a556cebf82156);
+            
+        
+
+        circle_marker_dcd9fceda69a2e5cb98d2a72c64d70db.bindPopup(popup_5cd09adff2922fc7ee9274188a43ec14)
+        ;
+
+        
+    
+    
+            circle_marker_dcd9fceda69a2e5cb98d2a72c64d70db.bindTooltip(
+                `<div>
+                     <b>Porta San Donato</b><extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_798df92a41501c7e08910850211242b0 = L.circleMarker(
+                [44.49446761939387, 11.356959971239052],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f714857175d53920d0768eb0d19e3c6a);
+        
+    
+        var popup_601535b992d124653fb1ed85faa52a9c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_ab08bab88331f48463bfd4a6d5df62f6 = $(`<div id="html_ab08bab88331f48463bfd4a6d5df62f6" style="width: 100.0%; height: 100.0%;">Porta San Vitale</div>`)[0];
+                popup_601535b992d124653fb1ed85faa52a9c.setContent(html_ab08bab88331f48463bfd4a6d5df62f6);
+            
+        
+
+        circle_marker_798df92a41501c7e08910850211242b0.bindPopup(popup_601535b992d124653fb1ed85faa52a9c)
+        ;
+
+        
+    
+    
+            circle_marker_798df92a41501c7e08910850211242b0.bindTooltip(
+                `<div>
+                     <b>Porta San Vitale</b><extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_9911ef5d8e06b278d3abcfd43ad12fb9 = L.circleMarker(
+                [44.49050398704167, 11.357390145940457],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f714857175d53920d0768eb0d19e3c6a);
+        
+    
+        var popup_539cc0426f8b555af160942f307e15d2 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_6951298562a175371c0338a3e94a2361 = $(`<div id="html_6951298562a175371c0338a3e94a2361" style="width: 100.0%; height: 100.0%;">Porta Maggiore</div>`)[0];
+                popup_539cc0426f8b555af160942f307e15d2.setContent(html_6951298562a175371c0338a3e94a2361);
+            
+        
+
+        circle_marker_9911ef5d8e06b278d3abcfd43ad12fb9.bindPopup(popup_539cc0426f8b555af160942f307e15d2)
+        ;
+
+        
+    
+    
+            circle_marker_9911ef5d8e06b278d3abcfd43ad12fb9.bindTooltip(
+                `<div>
+                     <b>Porta Maggiore</b><extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_1b0258efa5f4f44aeedfbe110469060b = L.circleMarker(
+                [44.485159049817206, 11.356063773944452],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f714857175d53920d0768eb0d19e3c6a);
+        
+    
+        var popup_380bc1e2808b1ceaefaf54939d303942 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_64a81f1fde361bc833c358ce826a9a4b = $(`<div id="html_64a81f1fde361bc833c358ce826a9a4b" style="width: 100.0%; height: 100.0%;">Porta Santo Stefano</div>`)[0];
+                popup_380bc1e2808b1ceaefaf54939d303942.setContent(html_64a81f1fde361bc833c358ce826a9a4b);
+            
+        
+
+        circle_marker_1b0258efa5f4f44aeedfbe110469060b.bindPopup(popup_380bc1e2808b1ceaefaf54939d303942)
+        ;
+
+        
+    
+    
+            circle_marker_1b0258efa5f4f44aeedfbe110469060b.bindTooltip(
+                `<div>
+                     <b>Porta Santo Stefano</b><extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_7b91c8106075baa3a42bc3a08164c931 = L.circleMarker(
+                [44.486105318390955, 11.348069693455418],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(feature_group_f714857175d53920d0768eb0d19e3c6a);
+        
+    
+        var popup_da82678b1a50f6dd019d969f8ce41e49 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_5f3d0c3eb5dcb704cb16bf7082084cd3 = $(`<div id="html_5f3d0c3eb5dcb704cb16bf7082084cd3" style="width: 100.0%; height: 100.0%;">Porta Castiglione</div>`)[0];
+                popup_da82678b1a50f6dd019d969f8ce41e49.setContent(html_5f3d0c3eb5dcb704cb16bf7082084cd3);
+            
+        
+
+        circle_marker_7b91c8106075baa3a42bc3a08164c931.bindPopup(popup_da82678b1a50f6dd019d969f8ce41e49)
+        ;
+
+        
+    
+    
+            circle_marker_7b91c8106075baa3a42bc3a08164c931.bindTooltip(
+                `<div>
+                     <b>Porta Castiglione</b><extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var feature_group_4e3922ee51a7eb1e5ec80156c67d36b5 = L.featureGroup(
+                {}
+            ).addTo(map_5f510643b1297031cdc8b53d5043fbeb);
+        
+    
+            var circle_marker_da1bb974ed360dd136783f4a15b6204a = L.circleMarker(
+                [44.49494913648133, 11.355456298206477],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e3922ee51a7eb1e5ec80156c67d36b5);
+        
+    
+        var popup_19f74f4bceec524c053d13767e1fd2df = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_8d103a73e52c596be66b6e5a1b813edf = $(`<div id="html_8d103a73e52c596be66b6e5a1b813edf" style="width: 100.0%; height: 100.0%;">GIARDINO DON TULLIO CONTIERO</div>`)[0];
+                popup_19f74f4bceec524c053d13767e1fd2df.setContent(html_8d103a73e52c596be66b6e5a1b813edf);
+            
+        
+
+        circle_marker_da1bb974ed360dd136783f4a15b6204a.bindPopup(popup_19f74f4bceec524c053d13767e1fd2df)
+        ;
+
+        
+    
+    
+            circle_marker_da1bb974ed360dd136783f4a15b6204a.bindTooltip(
+                `<div>
+                     <b>GIARDINO DON TULLIO CONTIERO</b><extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_b583b39cdb41020ab2a47ac72fd98636 = L.circleMarker(
+                [44.49195641018868, 11.345277193113121],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e3922ee51a7eb1e5ec80156c67d36b5);
+        
+    
+        var popup_e494977c30e9911a39a9eaefd4b1f35d = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_96ed0bb59ecdff2e8074db250fb2eab8 = $(`<div id="html_96ed0bb59ecdff2e8074db250fb2eab8" style="width: 100.0%; height: 100.0%;">GIARDINO DI PIAZZA MARCO MINGHETTI</div>`)[0];
+                popup_e494977c30e9911a39a9eaefd4b1f35d.setContent(html_96ed0bb59ecdff2e8074db250fb2eab8);
+            
+        
+
+        circle_marker_b583b39cdb41020ab2a47ac72fd98636.bindPopup(popup_e494977c30e9911a39a9eaefd4b1f35d)
+        ;
+
+        
+    
+    
+            circle_marker_b583b39cdb41020ab2a47ac72fd98636.bindTooltip(
+                `<div>
+                     <b>GIARDINO DI PIAZZA MARCO MINGHETTI</b><extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_012f05339ade33b2b8a85c75286234ed = L.circleMarker(
+                [44.497510160593556, 11.338426926282517],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e3922ee51a7eb1e5ec80156c67d36b5);
+        
+    
+        var popup_ec79a12dcb3e7c1b6a31373da5b778af = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_13bd1a1cd6c2f014525bf67c86df6a6b = $(`<div id="html_13bd1a1cd6c2f014525bf67c86df6a6b" style="width: 100.0%; height: 100.0%;">GIARDINO SALVATORE PINCHERLE</div>`)[0];
+                popup_ec79a12dcb3e7c1b6a31373da5b778af.setContent(html_13bd1a1cd6c2f014525bf67c86df6a6b);
+            
+        
+
+        circle_marker_012f05339ade33b2b8a85c75286234ed.bindPopup(popup_ec79a12dcb3e7c1b6a31373da5b778af)
+        ;
+
+        
+    
+    
+            circle_marker_012f05339ade33b2b8a85c75286234ed.bindTooltip(
+                `<div>
+                     <b>GIARDINO SALVATORE PINCHERLE</b><extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_0761810fcc058e14b4913871ee182540 = L.circleMarker(
+                [44.4877550749134, 11.357300001974403],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e3922ee51a7eb1e5ec80156c67d36b5);
+        
+    
+        var popup_0df362561d67f29e9f54b0407ede33e0 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_f59c69522baaf53a738c3c8bf213325e = $(`<div id="html_f59c69522baaf53a738c3c8bf213325e" style="width: 100.0%; height: 100.0%;">GIARDINO DI CASA CARDUCCI</div>`)[0];
+                popup_0df362561d67f29e9f54b0407ede33e0.setContent(html_f59c69522baaf53a738c3c8bf213325e);
+            
+        
+
+        circle_marker_0761810fcc058e14b4913871ee182540.bindPopup(popup_0df362561d67f29e9f54b0407ede33e0)
+        ;
+
+        
+    
+    
+            circle_marker_0761810fcc058e14b4913871ee182540.bindTooltip(
+                `<div>
+                     <b>GIARDINO DI CASA CARDUCCI</b><extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_aa51cbfb48956b09f5575d04cbc1df94 = L.circleMarker(
+                [44.49958697519417, 11.336726838178278],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e3922ee51a7eb1e5ec80156c67d36b5);
+        
+    
+        var popup_3cca4d8dd54b265ae374df49e4b96744 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_e2752193bd3a31b784797d04da61dd69 = $(`<div id="html_e2752193bd3a31b784797d04da61dd69" style="width: 100.0%; height: 100.0%;">PARCO 11 SETTEMBRE 2001</div>`)[0];
+                popup_3cca4d8dd54b265ae374df49e4b96744.setContent(html_e2752193bd3a31b784797d04da61dd69);
+            
+        
+
+        circle_marker_aa51cbfb48956b09f5575d04cbc1df94.bindPopup(popup_3cca4d8dd54b265ae374df49e4b96744)
+        ;
+
+        
+    
+    
+            circle_marker_aa51cbfb48956b09f5575d04cbc1df94.bindTooltip(
+                `<div>
+                     <b>PARCO 11 SETTEMBRE 2001</b><extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_45cb2922d8d0f81fdb609749b973f868 = L.circleMarker(
+                [44.50195424494683, 11.346274712231706],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e3922ee51a7eb1e5ec80156c67d36b5);
+        
+    
+        var popup_ce9d3c8cc9c2a760721188e76976df54 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_a5f87ebb0427b060088291b14c137993 = $(`<div id="html_a5f87ebb0427b060088291b14c137993" style="width: 100.0%; height: 100.0%;">GIARDINO DELLA MONTAGNOLA</div>`)[0];
+                popup_ce9d3c8cc9c2a760721188e76976df54.setContent(html_a5f87ebb0427b060088291b14c137993);
+            
+        
+
+        circle_marker_45cb2922d8d0f81fdb609749b973f868.bindPopup(popup_ce9d3c8cc9c2a760721188e76976df54)
+        ;
+
+        
+    
+    
+            circle_marker_45cb2922d8d0f81fdb609749b973f868.bindTooltip(
+                `<div>
+                     <b>GIARDINO DELLA MONTAGNOLA</b><extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_23cb758a2d8ee98a0d147e3f7a93bcf2 = L.circleMarker(
+                [44.488467921721565, 11.354681772106474],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e3922ee51a7eb1e5ec80156c67d36b5);
+        
+    
+        var popup_9680ee6da1b4fc00add0066e281d7a88 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_b95bc7d3e55bf6e7ef8b21be1b076f1d = $(`<div id="html_b95bc7d3e55bf6e7ef8b21be1b076f1d" style="width: 100.0%; height: 100.0%;">GIARDINO MIRAN HROVATIN</div>`)[0];
+                popup_9680ee6da1b4fc00add0066e281d7a88.setContent(html_b95bc7d3e55bf6e7ef8b21be1b076f1d);
+            
+        
+
+        circle_marker_23cb758a2d8ee98a0d147e3f7a93bcf2.bindPopup(popup_9680ee6da1b4fc00add0066e281d7a88)
+        ;
+
+        
+    
+    
+            circle_marker_23cb758a2d8ee98a0d147e3f7a93bcf2.bindTooltip(
+                `<div>
+                     <b>GIARDINO MIRAN HROVATIN</b><extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_ce1721369f51e408b70c07c759fc018c = L.circleMarker(
+                [44.48757567433735, 11.344322777975282],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e3922ee51a7eb1e5ec80156c67d36b5);
+        
+    
+        var popup_04739fbcb55e2dd1901845c78a20c4cd = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_7aba9190f13c00804c73138238452439 = $(`<div id="html_7aba9190f13c00804c73138238452439" style="width: 100.0%; height: 100.0%;">GIARDINO SALVO D'ACQUISTO</div>`)[0];
+                popup_04739fbcb55e2dd1901845c78a20c4cd.setContent(html_7aba9190f13c00804c73138238452439);
+            
+        
+
+        circle_marker_ce1721369f51e408b70c07c759fc018c.bindPopup(popup_04739fbcb55e2dd1901845c78a20c4cd)
+        ;
+
+        
+    
+    
+            circle_marker_ce1721369f51e408b70c07c759fc018c.bindTooltip(
+                `<div>
+                     <b>GIARDINO SALVO D'ACQUISTO</b><extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_e069a2ac05d15efe8e0af94cd1de6b22 = L.circleMarker(
+                [44.490939509422, 11.343925636446235],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e3922ee51a7eb1e5ec80156c67d36b5);
+        
+    
+        var popup_da4f594cd1170a68e36c551473342d2c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_b38d3d4789139ae0d91dcc949fe3728b = $(`<div id="html_b38d3d4789139ae0d91dcc949fe3728b" style="width: 100.0%; height: 100.0%;">GIARDINO DI PIAZZA CAVOUR</div>`)[0];
+                popup_da4f594cd1170a68e36c551473342d2c.setContent(html_b38d3d4789139ae0d91dcc949fe3728b);
+            
+        
+
+        circle_marker_e069a2ac05d15efe8e0af94cd1de6b22.bindPopup(popup_da4f594cd1170a68e36c551473342d2c)
+        ;
+
+        
+    
+    
+            circle_marker_e069a2ac05d15efe8e0af94cd1de6b22.bindTooltip(
+                `<div>
+                     <b>GIARDINO DI PIAZZA CAVOUR</b><extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_2ff5317c5f79a61120eaf56b2a2a3994 = L.circleMarker(
+                [44.49959212165458, 11.330745600714302],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e3922ee51a7eb1e5ec80156c67d36b5);
+        
+    
+        var popup_17aaba57d39565b36443a3f1276a5b07 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_2fc93819ff3e244b8e521866b9580dcd = $(`<div id="html_2fc93819ff3e244b8e521866b9580dcd" style="width: 100.0%; height: 100.0%;">GIARDINO DECORATO VALORE CIVILE</div>`)[0];
+                popup_17aaba57d39565b36443a3f1276a5b07.setContent(html_2fc93819ff3e244b8e521866b9580dcd);
+            
+        
+
+        circle_marker_2ff5317c5f79a61120eaf56b2a2a3994.bindPopup(popup_17aaba57d39565b36443a3f1276a5b07)
+        ;
+
+        
+    
+    
+            circle_marker_2ff5317c5f79a61120eaf56b2a2a3994.bindTooltip(
+                `<div>
+                     <b>GIARDINO DECORATO VALORE CIVILE</b><extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_f7c333f945322e2a4a0c7049a3f64fa4 = L.circleMarker(
+                [44.49647582447766, 11.330592578122717],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e3922ee51a7eb1e5ec80156c67d36b5);
+        
+    
+        var popup_1f1be67e30aa45af14a3138f01dd2af0 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_50e6fe7f544d6631bc1a50e19f8aac12 = $(`<div id="html_50e6fe7f544d6631bc1a50e19f8aac12" style="width: 100.0%; height: 100.0%;">GIARDINO OTELLO BIGNAMI</div>`)[0];
+                popup_1f1be67e30aa45af14a3138f01dd2af0.setContent(html_50e6fe7f544d6631bc1a50e19f8aac12);
+            
+        
+
+        circle_marker_f7c333f945322e2a4a0c7049a3f64fa4.bindPopup(popup_1f1be67e30aa45af14a3138f01dd2af0)
+        ;
+
+        
+    
+    
+            circle_marker_f7c333f945322e2a4a0c7049a3f64fa4.bindTooltip(
+                `<div>
+                     <b>GIARDINO OTELLO BIGNAMI</b><extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_afa3d5e94bc878979fe431c12ded4571 = L.circleMarker(
+                [44.50109118972105, 11.33091869320405],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e3922ee51a7eb1e5ec80156c67d36b5);
+        
+    
+        var popup_7a127ddd3bbcd1473c87ef7cacc2d6f5 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_74eae5851e8ba33e05b06f3fe89c6ba2 = $(`<div id="html_74eae5851e8ba33e05b06f3fe89c6ba2" style="width: 100.0%; height: 100.0%;">GIARDINO STEFANO CASAGRANDE</div>`)[0];
+                popup_7a127ddd3bbcd1473c87ef7cacc2d6f5.setContent(html_74eae5851e8ba33e05b06f3fe89c6ba2);
+            
+        
+
+        circle_marker_afa3d5e94bc878979fe431c12ded4571.bindPopup(popup_7a127ddd3bbcd1473c87ef7cacc2d6f5)
+        ;
+
+        
+    
+    
+            circle_marker_afa3d5e94bc878979fe431c12ded4571.bindTooltip(
+                `<div>
+                     <b>GIARDINO STEFANO CASAGRANDE</b><extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_702cb0fd7a72fd3befe62cb0145f9479 = L.circleMarker(
+                [44.49194880850652, 11.34857987068702],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e3922ee51a7eb1e5ec80156c67d36b5);
+        
+    
+        var popup_1deaf3cfb7dd271c43f1c80dab51cd82 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_dcd8eb3b0a2a57908538c8f9e260b196 = $(`<div id="html_dcd8eb3b0a2a57908538c8f9e260b196" style="width: 100.0%; height: 100.0%;">GIARDINO CLAUDIO ABBADO</div>`)[0];
+                popup_1deaf3cfb7dd271c43f1c80dab51cd82.setContent(html_dcd8eb3b0a2a57908538c8f9e260b196);
+            
+        
+
+        circle_marker_702cb0fd7a72fd3befe62cb0145f9479.bindPopup(popup_1deaf3cfb7dd271c43f1c80dab51cd82)
+        ;
+
+        
+    
+    
+            circle_marker_702cb0fd7a72fd3befe62cb0145f9479.bindTooltip(
+                `<div>
+                     <b>GIARDINO CLAUDIO ABBADO</b><extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_c9f566821ec7c070323fa06c04587321 = L.circleMarker(
+                [44.490262778950466, 11.3303266584927],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e3922ee51a7eb1e5ec80156c67d36b5);
+        
+    
+        var popup_02692b9d132dd02fbae51526e3296883 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_1c6ee25da1276489ba7c87b46b0a60b7 = $(`<div id="html_1c6ee25da1276489ba7c87b46b0a60b7" style="width: 100.0%; height: 100.0%;">GIARDINO ENA FRAZZONI</div>`)[0];
+                popup_02692b9d132dd02fbae51526e3296883.setContent(html_1c6ee25da1276489ba7c87b46b0a60b7);
+            
+        
+
+        circle_marker_c9f566821ec7c070323fa06c04587321.bindPopup(popup_02692b9d132dd02fbae51526e3296883)
+        ;
+
+        
+    
+    
+            circle_marker_c9f566821ec7c070323fa06c04587321.bindTooltip(
+                `<div>
+                     <b>GIARDINO ENA FRAZZONI</b><extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_119df417b80a33d6c7326b0c57dc10fd = L.circleMarker(
+                [44.487090507973356, 11.357355154180585],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e3922ee51a7eb1e5ec80156c67d36b5);
+        
+    
+        var popup_c72dbd4b0afb1695512d670dd66fcceb = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_3c7d14d71d006e27ac56636a8e5843cf = $(`<div id="html_3c7d14d71d006e27ac56636a8e5843cf" style="width: 100.0%; height: 100.0%;">GIARDINO ISABELLA CEOLA</div>`)[0];
+                popup_c72dbd4b0afb1695512d670dd66fcceb.setContent(html_3c7d14d71d006e27ac56636a8e5843cf);
+            
+        
+
+        circle_marker_119df417b80a33d6c7326b0c57dc10fd.bindPopup(popup_c72dbd4b0afb1695512d670dd66fcceb)
+        ;
+
+        
+    
+    
+            circle_marker_119df417b80a33d6c7326b0c57dc10fd.bindTooltip(
+                `<div>
+                     <b>GIARDINO ISABELLA CEOLA</b><extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_b135e346a5bb1374f660e4654b4e5f3c = L.circleMarker(
+                [44.50451760904234, 11.342603648648401],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e3922ee51a7eb1e5ec80156c67d36b5);
+        
+    
+        var popup_d85236205c9750fade4f79af61581c73 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_21ec55efa70f67ec34d4377c4ee42a16 = $(`<div id="html_21ec55efa70f67ec34d4377c4ee42a16" style="width: 100.0%; height: 100.0%;">GIARDINO GIORGIO AMENDOLA</div>`)[0];
+                popup_d85236205c9750fade4f79af61581c73.setContent(html_21ec55efa70f67ec34d4377c4ee42a16);
+            
+        
+
+        circle_marker_b135e346a5bb1374f660e4654b4e5f3c.bindPopup(popup_d85236205c9750fade4f79af61581c73)
+        ;
+
+        
+    
+    
+            circle_marker_b135e346a5bb1374f660e4654b4e5f3c.bindTooltip(
+                `<div>
+                     <b>GIARDINO GIORGIO AMENDOLA</b><extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_fa39085f946241ed457172875c3d61b2 = L.circleMarker(
+                [44.48540620491991, 11.354131692313484],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e3922ee51a7eb1e5ec80156c67d36b5);
+        
+    
+        var popup_3d6b1db1dfa33695a9f4cf0c9360618a = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_517a8adb7353f49b6f8021489cbf5e17 = $(`<div id="html_517a8adb7353f49b6f8021489cbf5e17" style="width: 100.0%; height: 100.0%;">GIARDINO SANTA TERESA VERZERI</div>`)[0];
+                popup_3d6b1db1dfa33695a9f4cf0c9360618a.setContent(html_517a8adb7353f49b6f8021489cbf5e17);
+            
+        
+
+        circle_marker_fa39085f946241ed457172875c3d61b2.bindPopup(popup_3d6b1db1dfa33695a9f4cf0c9360618a)
+        ;
+
+        
+    
+    
+            circle_marker_fa39085f946241ed457172875c3d61b2.bindTooltip(
+                `<div>
+                     <b>GIARDINO SANTA TERESA VERZERI</b><extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_ad9115b3321799e93fd6c8e0737078a4 = L.circleMarker(
+                [44.502233428537046, 11.336494524700754],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e3922ee51a7eb1e5ec80156c67d36b5);
+        
+    
+        var popup_f458dbacbca2d2a10a0938262209aa57 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_3e2b4e9e8f566578406727e1ea39e1b3 = $(`<div id="html_3e2b4e9e8f566578406727e1ea39e1b3" style="width: 100.0%; height: 100.0%;">GIARDINO DEL CAVATICCIO</div>`)[0];
+                popup_f458dbacbca2d2a10a0938262209aa57.setContent(html_3e2b4e9e8f566578406727e1ea39e1b3);
+            
+        
+
+        circle_marker_ad9115b3321799e93fd6c8e0737078a4.bindPopup(popup_f458dbacbca2d2a10a0938262209aa57)
+        ;
+
+        
+    
+    
+            circle_marker_ad9115b3321799e93fd6c8e0737078a4.bindTooltip(
+                `<div>
+                     <b>GIARDINO DEL CAVATICCIO</b><extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_67e934d87f889a3e088980c716120a09 = L.circleMarker(
+                [44.50429940376534, 11.337850068237413],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e3922ee51a7eb1e5ec80156c67d36b5);
+        
+    
+        var popup_d764a384c4cd729fa28eed4788cff4b1 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_3411cb6586f65a48460ac71f8a4131f6 = $(`<div id="html_3411cb6586f65a48460ac71f8a4131f6" style="width: 100.0%; height: 100.0%;">GIARDINO GRAZIELLA FAVA</div>`)[0];
+                popup_d764a384c4cd729fa28eed4788cff4b1.setContent(html_3411cb6586f65a48460ac71f8a4131f6);
+            
+        
+
+        circle_marker_67e934d87f889a3e088980c716120a09.bindPopup(popup_d764a384c4cd729fa28eed4788cff4b1)
+        ;
+
+        
+    
+    
+            circle_marker_67e934d87f889a3e088980c716120a09.bindTooltip(
+                `<div>
+                     <b>GIARDINO GRAZIELLA FAVA</b><extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_f2294dc274352f2e91b06428cec1fb37 = L.circleMarker(
+                [44.48822262823512, 11.355799659507934],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e3922ee51a7eb1e5ec80156c67d36b5);
+        
+    
+        var popup_166712f69022934d497599c9d8a8b7a9 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_fa005df09c16e028b935e6a63e3fb821 = $(`<div id="html_fa005df09c16e028b935e6a63e3fb821" style="width: 100.0%; height: 100.0%;">GIARDINO LAVINIA FONTANA</div>`)[0];
+                popup_166712f69022934d497599c9d8a8b7a9.setContent(html_fa005df09c16e028b935e6a63e3fb821);
+            
+        
+
+        circle_marker_f2294dc274352f2e91b06428cec1fb37.bindPopup(popup_166712f69022934d497599c9d8a8b7a9)
+        ;
+
+        
+    
+    
+            circle_marker_f2294dc274352f2e91b06428cec1fb37.bindTooltip(
+                `<div>
+                     <b>GIARDINO LAVINIA FONTANA</b><extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_4d50e419640000072bc4a3fc856eedd0 = L.circleMarker(
+                [44.50216033770568, 11.335513429438233],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e3922ee51a7eb1e5ec80156c67d36b5);
+        
+    
+        var popup_d25f9a1e26b049c44736f2a0dc043bd7 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_fdcc03e490a3778ad55962ee75695b8b = $(`<div id="html_fdcc03e490a3778ad55962ee75695b8b" style="width: 100.0%; height: 100.0%;">GIARDINO JOHN KLEMLEN</div>`)[0];
+                popup_d25f9a1e26b049c44736f2a0dc043bd7.setContent(html_fdcc03e490a3778ad55962ee75695b8b);
+            
+        
+
+        circle_marker_4d50e419640000072bc4a3fc856eedd0.bindPopup(popup_d25f9a1e26b049c44736f2a0dc043bd7)
+        ;
+
+        
+    
+    
+            circle_marker_4d50e419640000072bc4a3fc856eedd0.bindTooltip(
+                `<div>
+                     <b>GIARDINO JOHN KLEMLEN</b><extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_08f0196b9c9ff0283baa82bb21b69910 = L.circleMarker(
+                [44.48990503845443, 11.344809002759876],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e3922ee51a7eb1e5ec80156c67d36b5);
+        
+    
+        var popup_fe45ef8eb6944cb82a340d9b1d2d1989 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_261f8533ffc998ae31ec73029a792c64 = $(`<div id="html_261f8533ffc998ae31ec73029a792c64" style="width: 100.0%; height: 100.0%;">GIARDINO DINO GAVINA</div>`)[0];
+                popup_fe45ef8eb6944cb82a340d9b1d2d1989.setContent(html_261f8533ffc998ae31ec73029a792c64);
+            
+        
+
+        circle_marker_08f0196b9c9ff0283baa82bb21b69910.bindPopup(popup_fe45ef8eb6944cb82a340d9b1d2d1989)
+        ;
+
+        
+    
+    
+            circle_marker_08f0196b9c9ff0283baa82bb21b69910.bindTooltip(
+                `<div>
+                     <b>GIARDINO DINO GAVINA</b><extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_d915664af9a2b7aaeb88c7bc5fd98ad8 = L.circleMarker(
+                [44.497356523184614, 11.350195378903825],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
+            ).addTo(feature_group_4e3922ee51a7eb1e5ec80156c67d36b5);
+        
+    
+        var popup_5890d02010c11d9d6ba75b9de7a434ba = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_eac2b2f122cb56b2180400119e24db80 = $(`<div id="html_eac2b2f122cb56b2180400119e24db80" style="width: 100.0%; height: 100.0%;">GIARDINO DEL GUASTO</div>`)[0];
+                popup_5890d02010c11d9d6ba75b9de7a434ba.setContent(html_eac2b2f122cb56b2180400119e24db80);
+            
+        
+
+        circle_marker_d915664af9a2b7aaeb88c7bc5fd98ad8.bindPopup(popup_5890d02010c11d9d6ba75b9de7a434ba)
+        ;
+
+        
+    
+    
+            circle_marker_d915664af9a2b7aaeb88c7bc5fd98ad8.bindTooltip(
+                `<div>
+                     <b>GIARDINO DEL GUASTO</b><extra></extra>
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var layer_control_67b12f903357e2023caf79e545dca91a = {
+                base_layers : {
+                    "cartodbpositron" : tile_layer_25c3e9d598308bc92d49f5c92545a7d2,
+                },
+                overlays :  {
+                    "NOME" : feature_group_244917066fa4e5685fa673cc5c35e755,
+                    "name" : feature_group_f714857175d53920d0768eb0d19e3c6a,
+                    "DENOMINAZIONE" : feature_group_4e3922ee51a7eb1e5ec80156c67d36b5,
+                },
+            };
+            L.control.layers(
+                layer_control_67b12f903357e2023caf79e545dca91a.base_layers,
+                layer_control_67b12f903357e2023caf79e545dca91a.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_5f510643b1297031cdc8b53d5043fbeb);
+        
+</script>
+</html>
