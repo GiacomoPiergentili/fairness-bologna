@@ -1,7 +1,7 @@
 import pandas as pd
 import geopandas as gpd
 # import plotly.express as px # Not used if only using go
-import plotly.graph_objects as go
+# import plotly.graph_objects as go
 from shapely.geometry import Point
 import os # <-- Import os
 
@@ -95,50 +95,98 @@ if not scuole_gdf.empty:
             )
 
 # --- Modify plot_map ---
-def plot_map(show_scuole=True, show_porte=True, show_aree_verdi=True):
-    layers_to_plot = []
-    # Use the globally defined GDFs, checking if they exist and are not empty
+# def plot_map(show_scuole=True, show_porte=True, show_aree_verdi=True):
+#     layers_to_plot = []
+#     # Use the globally defined GDFs, checking if they exist and are not empty
+#     if show_scuole and 'scuole_gdf' in globals() and not scuole_gdf.empty:
+#         layers_to_plot.append(
+#             go.Scattermapbox(
+#                 lat=scuole_gdf['latitude'], lon=scuole_gdf['longitude'], mode='markers',
+#                 marker=go.scattermapbox.Marker(size=9, color='blue', symbol='circle', opacity=1.0), # Use working style
+#                 text=hover_text_scuole, hoverinfo='text', # name='Scuole'
+#             )
+#         )
+#     if show_porte and 'porte_gdf' in globals() and not porte_gdf.empty:
+#          layers_to_plot.append(
+#             go.Scattermapbox(
+#                 lat=porte_gdf['latitude'], lon=porte_gdf['longitude'], mode='markers', # Assuming 'latitude' exists after df_to_gdf
+#                 marker=go.scattermapbox.Marker(size=12, color='red', symbol='circle', opacity=1.0), # Use working style
+#                 text=porte_gdf['name'], hoverinfo='text', # name='Porte'
+#                 customdata=porte_gdf['name'],
+#             )
+#         )
+#     if show_aree_verdi and 'aree_verdi_gdf' in globals() and not aree_verdi_gdf.empty:
+#         layers_to_plot.append(
+#             go.Scattermapbox(
+#                 lat=aree_verdi_gdf['latitude'], lon=aree_verdi_gdf['longitude'], mode='markers', # Assuming these exist
+#                 marker=go.scattermapbox.Marker(size=8, color='green', symbol='circle', opacity=1.0), # Use working style
+#                 text=aree_verdi_gdf['DENOMINAZIONE'], hoverinfo='text', # name='Aree Verdi'
+#             )
+#         )
+
+#     if not layers_to_plot:
+#         print("No layers selected or valid GeoDataFrames are available. Nothing to plot.")
+#         return go.Figure()
+
+#     fig = go.Figure(data=layers_to_plot)
+
+#     fig.update_layout(
+#         mapbox_style="open-street-map",
+#         mapbox_center={"lat": 44.4949, "lon": 11.3426},
+#         mapbox_zoom=13,
+#         margin={"r":0,"t":30,"l":0,"b":0},
+#         title="Mappa di Bologna",
+#         showlegend=False,
+#         # legend_title_text='Legenda',
+#         height=750,
+#     )
+
+#     return fig
+
+import folium
+from folium.plugins import MarkerCluster
+
+def plot_map_folium(show_scuole=True, show_porte=True, show_aree_verdi=True):
+    # Crea mappa centrata su Bologna
+    m = folium.Map(location=[44.4949, 11.3426], zoom_start=13)
+
+    # Marker cluster opzionale per gestire gruppi
+    marker_cluster = MarkerCluster().add_to(m)
+
     if show_scuole and 'scuole_gdf' in globals() and not scuole_gdf.empty:
-        layers_to_plot.append(
-            go.Scattermapbox(
-                lat=scuole_gdf['latitude'], lon=scuole_gdf['longitude'], mode='markers',
-                marker=go.scattermapbox.Marker(size=9, color='blue', symbol='circle', opacity=1.0), # Use working style
-                text=hover_text_scuole, hoverinfo='text', # name='Scuole'
-            )
-        )
+        for _, row in scuole_gdf.iterrows():
+            folium.CircleMarker(
+                location=[row['latitude'], row['longitude']],
+                radius=5,
+                color='blue',
+                fill=True,
+                fill_opacity=0.7,
+                popup=folium.Popup(row.get('hover_text', 'Scuola'), max_width=250),
+                tooltip=row.get('hover_text', 'Scuola')
+            ).add_to(marker_cluster)
+
     if show_porte and 'porte_gdf' in globals() and not porte_gdf.empty:
-         layers_to_plot.append(
-            go.Scattermapbox(
-                lat=porte_gdf['latitude'], lon=porte_gdf['longitude'], mode='markers', # Assuming 'latitude' exists after df_to_gdf
-                marker=go.scattermapbox.Marker(size=12, color='red', symbol='circle', opacity=1.0), # Use working style
-                text=porte_gdf['name'], hoverinfo='text', # name='Porte'
-                customdata=porte_gdf['name'],
-            )
-        )
+        for _, row in porte_gdf.iterrows():
+            folium.CircleMarker(
+                location=[row['latitude'], row['longitude']],
+                radius=7,
+                color='red',
+                fill=True,
+                fill_opacity=0.9,
+                popup=folium.Popup(row['name'], max_width=250),
+                tooltip=row['name']
+            ).add_to(marker_cluster)
+
     if show_aree_verdi and 'aree_verdi_gdf' in globals() and not aree_verdi_gdf.empty:
-        layers_to_plot.append(
-            go.Scattermapbox(
-                lat=aree_verdi_gdf['latitude'], lon=aree_verdi_gdf['longitude'], mode='markers', # Assuming these exist
-                marker=go.scattermapbox.Marker(size=8, color='green', symbol='circle', opacity=1.0), # Use working style
-                text=aree_verdi_gdf['DENOMINAZIONE'], hoverinfo='text', # name='Aree Verdi'
-            )
-        )
+        for _, row in aree_verdi_gdf.iterrows():
+            folium.CircleMarker(
+                location=[row['latitude'], row['longitude']],
+                radius=6,
+                color='green',
+                fill=True,
+                fill_opacity=0.6,
+                popup=folium.Popup(row.get('DENOMINAZIONE', 'Area verde'), max_width=250),
+                tooltip=row.get('DENOMINAZIONE', 'Area verde')
+            ).add_to(marker_cluster)
 
-    if not layers_to_plot:
-        print("No layers selected or valid GeoDataFrames are available. Nothing to plot.")
-        return go.Figure()
-
-    fig = go.Figure(data=layers_to_plot)
-
-    fig.update_layout(
-        mapbox_style="open-street-map",
-        mapbox_center={"lat": 44.4949, "lon": 11.3426},
-        mapbox_zoom=13,
-        margin={"r":0,"t":30,"l":0,"b":0},
-        title="Mappa di Bologna",
-        showlegend=False,
-        # legend_title_text='Legenda',
-        height=750,
-    )
-
-    return fig
+    return m
