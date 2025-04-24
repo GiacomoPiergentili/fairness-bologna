@@ -112,6 +112,7 @@ def plot_map(show_scuole=True, show_porte=True, show_aree_verdi=True):
                 lat=porte_gdf['latitude'], lon=porte_gdf['longitude'], mode='markers', # Assuming 'latitude' exists after df_to_gdf
                 marker=go.scattermapbox.Marker(size=12, color='red', symbol='circle', opacity=1.0), # Use working style
                 text=porte_gdf['name'], hoverinfo='text', # name='Porte'
+                customdata=porte_gdf['name'],
             )
         )
     if show_aree_verdi and 'aree_verdi_gdf' in globals() and not aree_verdi_gdf.empty:
