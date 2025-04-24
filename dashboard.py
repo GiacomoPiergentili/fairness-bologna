@@ -68,7 +68,7 @@ with col2:
     show_scuole_opt = st.checkbox("🔵 Mostra Scuole", value=True)
     show_porte_opt = st.checkbox("🔴 Mostra Porte", value=True)
     show_aree_verdi_opt = st.checkbox("🟢 Mostra Aree Verdi", value=True)
-    show_radius_opt = st.checkbox("⭕ Mostra Raggio di Azione", value=True)
+    show_radius_opt = st.checkbox("⭕ Mostra Raggio di Azione", value=False)
     choose_radius = st.slider("Raggio di azione", min_value=0, max_value=1000, value=650, step=25)
 
 # --- Place Map in the Left Column (col1) ---
@@ -104,22 +104,42 @@ with col1:
 
 # Note: The "Dashboard execution finished" message will appear below col1
 
-# --- Add a new row below the map with two columns ---
+col3, col4 = st.columns(2)
+
 if door:
+    # --- Define Sliders First (in col3) ---
+    with col3:
+        st.title(f"Door settings: {door}")
+        # Use a temporary dictionary to store slider values for this run
+        current_door_vals = {}
+        for key in data.porte_data[door]['vals']:
+            # Read the current value from the data structure for the default
+            default_value = data.porte_data[door]['vals'][key]
+            # Create the slider and store its *current* return value
+            current_door_vals[key] = st.slider(
+                key,
+                min_value=-1.0,
+                max_value=1.0,
+                value=default_value, # Set initial value from data
+                key=f"{door}_{key}" # Add unique key for persistence
+            )
+        # --- Important: Update the main data structure *after* all sliders are drawn ---
+        # This ensures the data reflects the latest slider positions for the *next* part of the script
+        data.porte_data[door]['vals'] = current_door_vals
+
+    # --- Perform Calculations Using Updated Values ---
     path = get_path(door)
     df = pd.read_csv(path, sep=';')
-    ts_data=get_stats_ts(df)
-    effort = {age_category : weight_function(age_category, data.weights, data.porte_data[door]) for age_category in data.weights.keys()}
-    
-    # P(attraversare)=1-costo attuale/massimo costo
-    # max([effort[key] for key in effort.keys()])
-    probs = {key:1-(effort[key]/MAX_VAL) for key in effort.keys()}
+    ts_data = get_stats_ts(df)
+    # Calculations now use the values just set by the sliders in this run
+    effort = {age_category: weight_function(age_category, data.weights, data.porte_data[door]) for age_category in data.weights.keys()}
+    probs = {key: 1 - (effort[key] / MAX_VAL) for key in effort.keys()}
 
     keys = list(probs.keys())   # categories
 
     prob_history = {key: [] for key in keys}
     prob_history_non_softmax = {key: [] for key in keys}
-    time_steps = np.linspace(0,24,num=100)
+    time_steps = np.linspace(0, 24, num=100)
 
     for t in time_steps:
         scaled, softmaxed = get_probs(t, probs)
@@ -127,28 +147,16 @@ if door:
             prob_history[key].append(softmaxed[key])
             prob_history_non_softmax[key].append(scaled[key])
 
-
     volumes_scaled = {key: [] for key in keys}
 
     for index, row in ts_data.iterrows():
-        t=(row['hour']*100+row['minute_interval']*1.6779661017)/100 # per convertire l'ora nel range 0..24
-
+        t = (row['hour'] * 100 + row['minute_interval'] * 1.6779661017) / 100 # per convertire l'ora nel range 0..24
         softmax_dict = get_probs(t, probs)[1]
-        
         prob_vals = np.array(list(softmax_dict.values()))
-        for _,key in enumerate(keys):
-            volumes_scaled[key].append(prob_vals[_]*row['mean'])
-    
+        for _, key in enumerate(keys):
+            volumes_scaled[key].append(prob_vals[_] * row['mean'])
 
-    col3, col4 = st.columns(2)
-
-    with col3:
-        st.title(f"Door settings: {door}")
-        for key in data.porte_data[door]['vals']:
-            data.porte_data[door]['vals'][key] = st.slider(key, min_value=-1.0, max_value=1.0, value=data.porte_data[door]['vals'][key])
-            # data.porte_data[door]['vals']['costo ingresso'] = st.slider("costo ingresso", min_value=-1.0, max_value=1.0, value=data.porte_data[door]['vals']['costo ingresso'])
-        
-
+    # --- Display Results (in col4) ---
     with col4:
         st.title(f"Simulation prediction")
         # tabellina carina carina
@@ -156,6 +164,8 @@ if door:
         st.dataframe(df_effort, use_container_width=True)
 
         # Grafico Matplotlib
+        # IMPORTANT: Need to import matplotlib.pyplot as plt earlier in the file
+        import matplotlib.pyplot as plt
         fig, ax = plt.subplots(figsize=(12, 7))  # Crea la figura
 
         for key in keys:
@@ -163,17 +173,30 @@ if door:
 
         ax.plot(ts_data['mean'], label='flow rate of people', linestyle='dotted')
 
-        ax.set_xticks(np.arange(0, len(ts_data), step=4))
+        # Adjust x-ticks for better readability if needed
+        tick_step = max(1, len(ts_data) // 10) # Show around 10 labels
+        ax.set_xticks(np.arange(0, len(ts_data), step=tick_step))
         ax.set_xticklabels(
-            [ts_data['timeStr'][i] for i in range(0, len(ts_data), 4)],
-            rotation=45
+            [ts_data['timeStr'][i] for i in np.arange(0, len(ts_data), step=tick_step)],
+            rotation=45,
+            ha="right" # Align rotated labels better
         )
 
-        ax.set_xlabel("hour")
-        ax.set_ylabel("flow rate")
-        ax.set_title("flow rate per hour of the day")
+        ax.set_xlabel("Hour of Day")
+        ax.set_ylabel("Flow Rate / Scaled Volume")
+        ax.set_title("Flow Rate Simulation per Category")
         ax.grid(True)
         ax.legend()
         plt.tight_layout()
 
         st.pyplot(fig)  # Visualizza il grafico in Streamlit
+else:
+    # --- Define Placeholders when NO door is selected ---
+    with col3:
+        st.info("Click a 'Porta' marker on the map to view and adjust its settings.")
+        # You can add more empty space or other placeholder elements if needed
+        # st.write("") # Adds some vertical space
+
+    with col4:
+        st.info("Simulation predictions will appear here once a door is selected.")
+        # st.write("")

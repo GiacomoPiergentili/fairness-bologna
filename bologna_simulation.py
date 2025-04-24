@@ -25,7 +25,7 @@ def load_data(filename, delimiter=','):
 
 porte_dict= {key: data.porte_data[key]["coords"] for key in data.porte_data.keys()}
 porte_df = pd.DataFrame.from_dict(porte_dict, orient='index', columns=['latitude', 'longitude'])
-porte_df.index.name = 'name'
+porte_df = porte_df.reset_index().rename(columns={"index":"name"})
 aree_verdi_df = load_data("carta-tecnica-comunale-toponimi-parchi-e-giardini.csv", delimiter=';')
 scuole_df = load_data("elenco-delle-scuole.csv", delimiter=';')
 
@@ -111,6 +111,7 @@ def create_gdf_from_points(df: pd.DataFrame) -> gpd.GeoDataFrame:
 # --- Create GeoDataFrames ---
 print("\nCreating GeoDataFrames...")
 porte_gdf = create_gdf_from_points(porte_df)
+print(porte_gdf)
 aree_verdi_gdf = create_gdf_from_points(aree_verdi_df)
 scuole_gdf = create_gdf_from_points(scuole_df)
 print("Finished creating GeoDataFrames.\n")
@@ -213,48 +214,57 @@ def add_markers_to_map(
 
 def plot_map_folium(
     center_location=[44.4949, 11.3426],
-    zoom=13,
+    zoom=13.5,
     show_scuole=True,
     show_porte=True,
     show_aree_verdi=True,
-    show_porte_range=False,   # New: Control initial visibility of porte range
-    porte_range_radius=650    # New: Define porte range radius in meters (e.g., 500m)
+    show_porte_range=False,   # Control initial visibility of porte range
+    porte_range_radius=650    # Define porte range radius in meters
     ):
     """Creates and returns a Folium map with specified layers."""
     print(f"Generating map with Porte range radius: {porte_range_radius}m (Visible: {show_porte_range})")
     # Create base map
     m = folium.Map(location=center_location, zoom_start=zoom, tiles="CartoDB positron")
 
-    # Create FeatureGroups for each layer type
-    scuole_fg = folium.FeatureGroup(name="Scuole", show=show_scuole).add_to(m)
-    porte_fg = folium.FeatureGroup(name="Porte", show=show_porte).add_to(m)
-    aree_verdi_fg = folium.FeatureGroup(name="Aree Verdi", show=show_aree_verdi).add_to(m)
-    # Create a separate FeatureGroup for the porte range circles
+    # --- Layer Order Control ---
+    # 1. Create and add the Range Circle layer FIRST (so it's underneath)
     porte_range_fg = folium.FeatureGroup(name=f"Porte Range ({porte_range_radius}m)", show=show_porte_range).add_to(m)
 
-    # Add data to FeatureGroups using the helper function
+    # 2. Create the Marker layers (but don't add them to the map yet)
+    scuole_fg = folium.FeatureGroup(name="Scuole", show=show_scuole)
+    porte_fg = folium.FeatureGroup(name="Porte", show=show_porte)
+    aree_verdi_fg = folium.FeatureGroup(name="Aree Verdi", show=show_aree_verdi)
+
+    # 3. Populate the layers with data using the helper function
+    #    (The helper adds markers/circles to the FeatureGroups passed to it)
     if 'scuole_gdf' in globals() and not scuole_gdf.empty:
         add_markers_to_map(m, scuole_gdf, scuole_fg, 'blue', 5, 'CODICE_SCUOLA', 'NOME', 'hover_text')
 
     if 'porte_gdf' in globals() and not porte_gdf.empty:
+        # Note: add_markers_to_map now adds markers to porte_fg and circles to porte_range_fg
         add_markers_to_map(
-            m=m,
+            m=m, # Pass map context if needed by helper, though not strictly necessary here
             gdf=porte_gdf,
-            feature_group=porte_fg, # Add markers to porte group
+            feature_group=porte_fg,           # Add markers to this group
             color='red',
             radius=7,
             id_col='id',
             name_col='name',
             hover_col='hover_text',
-            add_range_circles=True, # Tell function to add circles
-            range_radius=porte_range_radius, # Pass the radius
+            add_range_circles=True,           # Tell function to add circles
+            range_radius=porte_range_radius,  # Pass the radius
             range_feature_group=porte_range_fg # Pass the dedicated group for circles
         )
 
     if 'aree_verdi_gdf' in globals() and not aree_verdi_gdf.empty:
         add_markers_to_map(m, aree_verdi_gdf, aree_verdi_fg, 'green', 6, 'ID_OGGETTO', 'DENOMINAZIONE', 'hover_text')
 
-    # Add Layer Control - it will automatically pick up all FeatureGroups
+    # 4. Add the Marker layers to the map AFTER the range layer
+    scuole_fg.add_to(m)
+    porte_fg.add_to(m)
+    aree_verdi_fg.add_to(m)
+
+    # 5. Add Layer Control - it will pick up all FeatureGroups added to the map
     folium.LayerControl().add_to(m)
 
     return m
