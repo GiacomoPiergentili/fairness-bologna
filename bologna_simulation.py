@@ -1,62 +1,52 @@
 import pandas as pd
 import geopandas as gpd
-# import plotly.express as px # Not used if only using go
 import plotly.graph_objects as go
 from shapely.geometry import Point
-import os # <-- Import os
+import os
+import json
 
-# --- Define Base Directory ---
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.join(BASE_DIR, "data")
 
-# --- Load Data using absolute paths ---
 try:
     porte_df = pd.read_csv(os.path.join(DATA_DIR, "porte.csv"))
     aree_verdi_df = pd.read_csv(os.path.join(DATA_DIR, "carta-tecnica-comunale-toponimi-parchi-e-giardini.csv"), delimiter=';')
     scuole_df = pd.read_csv(os.path.join(DATA_DIR, "elenco-delle-scuole.csv"), delimiter=';')
 except FileNotFoundError as e:
     print(f"ERROR: Data file not found. Make sure the 'data' folder is in the same directory as the script. {e}")
-    # Optionally, raise the error or exit if data is critical
-    raise e # Or sys.exit(1) after importing sys
+    raise e
 
-# --- Keep coordinate parsing and df_to_gdf ---
-# (Note: df_to_gdf still has limitations for aree_verdi_df, consider using the robust create_gdf if issues arise)
 def parse_coordinates(geopoint):
-    try: # Add basic error handling
+    try:
         if pd.isna(geopoint) or not isinstance(geopoint, str): return None, None
         lat_str, lon_str = geopoint.split(',')
         return float(lon_str.strip()), float(lat_str.strip())
     except: return None, None
 
 def df_to_gdf(df):
-    temp_df = df.copy() # Work on a copy
-    lon_col, lat_col = 'longitude', 'latitude' # Default names
+    temp_df = df.copy()
+    lon_col, lat_col = 'longitude', 'latitude'
 
     if 'Geo Point' in temp_df.columns:
         print("Parsing Geo Point...")
-        # Apply parsing and handle potential None values
         coords = temp_df['Geo Point'].apply(parse_coordinates)
-        # Filter out None results before unpacking
         valid_coords = coords.dropna()
         if not valid_coords.empty:
-            temp_df = temp_df.loc[valid_coords.index] # Keep only rows with valid coords
+            temp_df = temp_df.loc[valid_coords.index]
             temp_df[lon_col], temp_df[lat_col] = zip(*valid_coords)
         else:
             print("Warning: No valid coordinates found in 'Geo Point'.")
-            return gpd.GeoDataFrame() # Return empty if no valid coords
+            return gpd.GeoDataFrame()
     elif 'longitude' in temp_df.columns and 'latitude' in temp_df.columns:
         print("Using Longitude/Latitude columns...")
-        lon_col, lat_col = 'longitude', 'latitude' # Use existing columns
-        # Ensure they are numeric, coercing errors
+        lon_col, lat_col = 'longitude', 'latitude'
         temp_df[lon_col] = pd.to_numeric(temp_df[lon_col], errors='coerce')
         temp_df[lat_col] = pd.to_numeric(temp_df[lat_col], errors='coerce')
-        temp_df.dropna(subset=[lon_col, lat_col], inplace=True) # Drop rows where conversion failed
+        temp_df.dropna(subset=[lon_col, lat_col], inplace=True)
     elif 'Geo Shape' in temp_df.columns:
-        print("Parsing Geo Shape (basic)...") # Add basic Geo Shape handling if needed
-        # Add the robust GeoJSON parsing logic here if required for aree_verdi
-        # For now, this branch might lead to errors or empty GDF for parks
+        print("Parsing Geo Shape (basic)...")
         print("Warning: Basic df_to_gdf doesn't fully support 'Geo Shape'. Aree Verdi might be empty/incorrect.")
-        return gpd.GeoDataFrame() # Placeholder
+        return gpd.GeoDataFrame()
     else:
         print("Error: Could not find suitable coordinate columns.")
         return gpd.GeoDataFrame()
@@ -75,69 +65,117 @@ def df_to_gdf(df):
         return gpd.GeoDataFrame()
 
 
-# --- Create GeoDataFrames ---
 print("Creating GDFs...")
 porte_gdf = df_to_gdf(porte_df)
-aree_verdi_gdf = df_to_gdf(aree_verdi_df) # This will likely be empty/fail with basic df_to_gdf
+aree_verdi_gdf = df_to_gdf(aree_verdi_df)
 scuole_gdf = df_to_gdf(scuole_df)
 print("Finished creating GDFs.")
 
-# --- Keep hover text creation ---
-# Add checks for empty GDFs before creating hover text
 hover_text_scuole = ""
-if not scuole_gdf.empty:
-    hover_text_scuole = (
-                '<b>' + scuole_gdf['NOME'].astype(str) + '</b><br>' +
-                'Servizio: ' + scuole_gdf['SERVIZIO'].astype(str) + '<br>' +
-                'Istituto: ' + scuole_gdf['ISTITUZIONE_SCOLASTICA'].astype(str) + '<br>' +
-                'Indirizzo: ' + scuole_gdf['Indirizzo scuola'].astype(str) + ' ' + scuole_gdf['CIVICO'].astype(str) +
-                '<extra></extra>' # Add extra to hide trace info
-            )
+hover_text_porte = ""
+hover_text_aree_verdi = ""
 
-# --- Modify plot_map ---
-def plot_map(show_scuole=True, show_porte=True, show_aree_verdi=True):
+def plot_map(scuole_gdf, porte_gdf, aree_verdi_gdf, show_scuole=True, show_porte=True, show_aree_verdi=True, porte_radius_meters=0):
     layers_to_plot = []
-    # Use the globally defined GDFs, checking if they exist and are not empty
-    if show_scuole and 'scuole_gdf' in globals() and not scuole_gdf.empty:
+    porte_circles_geojson = None
+
+    # Define CRS constants
+    WGS84 = "EPSG:4326"
+    UTM_ZONE_32N = "EPSG:32632"
+
+    if show_porte and porte_gdf is not None and not porte_gdf.empty and porte_radius_meters > 0:
+        try:
+            temp_porte_gdf = porte_gdf.copy()
+            if temp_porte_gdf.crs is None:
+                temp_porte_gdf.set_crs(WGS84, inplace=True)
+            elif temp_porte_gdf.crs.to_string() != WGS84:
+                 temp_porte_gdf = temp_porte_gdf.to_crs(WGS84)
+
+            porte_gdf_proj = temp_porte_gdf.to_crs(UTM_ZONE_32N)
+
+            porte_circles_proj = porte_gdf_proj.geometry.buffer(porte_radius_meters)
+
+            porte_circles_wgs84 = porte_circles_proj.to_crs(WGS84)
+
+            circles_gdf = gpd.GeoDataFrame(geometry=porte_circles_wgs84, crs=WGS84)
+
+            porte_circles_geojson = json.loads(circles_gdf.to_json())
+
+        except Exception as e:
+            print(f"Error generating porte circles: {e}")
+
+    if show_scuole and scuole_gdf is not None and not scuole_gdf.empty:
+        hover_text_scuole = (
+            '<b>' + scuole_gdf['NOME'].astype(str) + '</b><br>' +
+            'Servizio: ' + scuole_gdf['SERVIZIO'].astype(str) + '<br>' +
+            'Istituto: ' + scuole_gdf['ISTITUZIONE_SCOLASTICA'].astype(str) + '<br>' +
+            'Indirizzo: ' + scuole_gdf['Indirizzo scuola'].astype(str) + ' ' + scuole_gdf['CIVICO'].astype(str) +
+            '<extra></extra>'
+        )
         layers_to_plot.append(
             go.Scattermapbox(
                 lat=scuole_gdf['latitude'], lon=scuole_gdf['longitude'], mode='markers',
-                marker=go.scattermapbox.Marker(size=9, color='blue', symbol='circle', opacity=1.0), # Use working style
-                text=hover_text_scuole, hoverinfo='text', # name='Scuole'
+                marker=go.scattermapbox.Marker(size=9, color='blue', symbol='circle', opacity=1.0),
+                text=hover_text_scuole, hoverinfo='text',
             )
         )
-    if show_porte and 'porte_gdf' in globals() and not porte_gdf.empty:
+    if show_porte and porte_gdf is not None and not porte_gdf.empty:
          layers_to_plot.append(
             go.Scattermapbox(
-                lat=porte_gdf['latitude'], lon=porte_gdf['longitude'], mode='markers', # Assuming 'latitude' exists after df_to_gdf
-                marker=go.scattermapbox.Marker(size=12, color='red', symbol='circle', opacity=1.0), # Use working style
-                text=porte_gdf['name'], hoverinfo='text', # name='Porte'
+                lat=porte_gdf['latitude'], lon=porte_gdf['longitude'], mode='markers',
+                marker=go.scattermapbox.Marker(size=12, color='red', symbol='circle', opacity=1.0),
+                text=porte_gdf['name'], hoverinfo='text',
             )
         )
-    if show_aree_verdi and 'aree_verdi_gdf' in globals() and not aree_verdi_gdf.empty:
-        layers_to_plot.append(
-            go.Scattermapbox(
-                lat=aree_verdi_gdf['latitude'], lon=aree_verdi_gdf['longitude'], mode='markers', # Assuming these exist
-                marker=go.scattermapbox.Marker(size=8, color='green', symbol='circle', opacity=1.0), # Use working style
-                text=aree_verdi_gdf['DENOMINAZIONE'], hoverinfo='text', # name='Aree Verdi'
+    if show_aree_verdi and aree_verdi_gdf is not None and not aree_verdi_gdf.empty:
+        if 'latitude' in aree_verdi_gdf.columns and 'longitude' in aree_verdi_gdf.columns and 'DENOMINAZIONE' in aree_verdi_gdf.columns:
+            layers_to_plot.append(
+                go.Scattermapbox(
+                    lat=aree_verdi_gdf['latitude'], lon=aree_verdi_gdf['longitude'], mode='markers',
+                    marker=go.scattermapbox.Marker(size=8, color='green', symbol='circle', opacity=1.0),
+                    text=aree_verdi_gdf['DENOMINAZIONE'], hoverinfo='text',
+                )
             )
-        )
+        else:
+            print("Warning: Aree Verdi GDF is missing required columns (latitude, longitude, DENOMINAZIONE). Skipping layer.")
 
-    if not layers_to_plot:
-        print("No layers selected or valid GeoDataFrames are available. Nothing to plot.")
-        return go.Figure()
+
+    if not layers_to_plot and not porte_circles_geojson:
+        print("No layers selected or valid GeoDataFrames/circles are available. Nothing to plot.")
+        fig = go.Figure()
+        fig.update_layout(
+            mapbox_style="open-street-map",
+            mapbox_center={"lat": 44.4949, "lon": 11.3426},
+            mapbox_zoom=12,
+            margin={"r":0,"t":30,"l":0,"b":0},
+            title="Mappa di Bologna - Nessun dato da visualizzare",
+            height=750,
+        )
+        return fig
+
 
     fig = go.Figure(data=layers_to_plot)
+
+    mapbox_layers = []
+    if porte_circles_geojson:
+        mapbox_layers.append(
+            {
+                "source": porte_circles_geojson,
+                "type": "fill",
+                "color": "rgba(255, 0, 0, 0.2)",
+                "below": "traces",
+            }
+        )
 
     fig.update_layout(
         mapbox_style="open-street-map",
         mapbox_center={"lat": 44.4949, "lon": 11.3426},
-        mapbox_zoom=13,
+        mapbox_zoom=13.5,
         margin={"r":0,"t":30,"l":0,"b":0},
         title="Mappa di Bologna",
         showlegend=False,
-        # legend_title_text='Legenda',
         height=750,
+        mapbox_layers=mapbox_layers if mapbox_layers else None
     )
 
     return fig
