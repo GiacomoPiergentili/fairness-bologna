@@ -5,7 +5,6 @@ import plotly.graph_objects as go
 import numpy as np
 import pandas as pd
 
-
 from scipy.special import softmax
 from time_series import *
 from probability_toolkit import *
@@ -15,12 +14,9 @@ from utils import *
 from streamlit_folium import st_folium
 from bologna_simulation import plot_map_folium
 
-
-
 st.set_page_config(layout="wide")
 
 st.title("Bologna Simulation Dashboard")
-
 
 # to be adjusted
 import data # qua deve venire caricato il json con le impostazioni
