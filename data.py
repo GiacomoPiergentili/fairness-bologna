@@ -1,41 +1,10 @@
-# weights = {
-#   "bambini": {
-#     "costo ingresso": 0.1,
-#     "aree verdi gratuite": -0.6,
-#     "aree verdi pagamento": 0.5,
-#     "scuole pubbliche": -0.9,
-#     "scuole private": -0.8,
-#     "servizi": -0.7,
-#     "mobilita": -0.8,
-#   },
-#   "ragazzi": {
-#     "costo ingresso": 0.6,
-#     "aree verdi gratuite": -0.7,
-#     "aree verdi pagamento": 0.8,
-#     "scuole pubbliche": -0.4,
-#     "scuole private": -0.4,
-#     "servizi": -0.5,
-#     "mobilita": -0.9,
-#   },
-#   "adulti": {
-#     "costo ingresso": 0.5,
-#     "aree verdi gratuite": -0.6,
-#     "aree verdi pagamento": 0.3,
-#     "scuole pubbliche": -0.3,
-#     "scuole private": -0.3,
-#     "servizi": -0.8,
-#     "mobilita": -0.8,
-#   },
-#   "adulte": {
-#     "costo ingresso": 0.5,
-#     "aree verdi gratuite": -0.6,
-#     "aree verdi pagamento": 0.3,
-#     "scuole pubbliche": -0.9,
-#     "scuole private": -0.8,
-#     "servizi": -0.8,
-#     "mobilita": -0.8,
-#   }
-# }
+"""
+data that will be used in the simulation
+
+weights -> represent how much a certain feature influence a certain category
+porte_data -> represent features for each door. this is used for the inzialization of our simulator and those are the value that will change in the simulation
+
+"""
 
 # the following is used as example and are not based on real data. its a toy example
 weights = {

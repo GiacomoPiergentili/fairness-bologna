@@ -1,3 +1,12 @@
+"""
+used to create functions that represent the probility for
+a given category to be out at a certain hour.
+
+    EG. P(t|kid)
+        the probability to see a kid at 3AM is low P(3AM|kid) = 0
+        instead P(8AM|kid) > P(3AM|kid)
+
+"""
 MAX_VAL = 5
 
 def const_val(val,t0,t1,t):
@@ -24,7 +33,7 @@ def children_prob(t):
 
         const_val(0.3,15,20,t)
     )
-    return max(0,val) # smoothing
+    return max(0,val) 
 
 def guys_prob(t):
     val = (
@@ -33,7 +42,7 @@ def guys_prob(t):
         const_val(0.4,7.5,22,t)+\
         (const_val(0.4,22,24,t)-ramp_val(0.4, 22,24,t)) 
     )
-    return max(0.2,val) # smoothing
+    return max(0.2,val) # L smoothing
 
 def man_prob(t):
     val = (
@@ -49,7 +58,7 @@ def man_prob(t):
 
         const_val(0.3,20,24,t)
     )
-    return max(0.2,val) # smoothing
+    return max(0.2,val) # L smoothing
 
 def woman_prob(t):
     val = (
@@ -66,7 +75,7 @@ def woman_prob(t):
 
         const_val(0.3,15,20,t)
     )
-    return max(0.1,val) # smoothing
+    return max(0.1,val) # L smoothing
 
 def plot_probs():
     import numpy as np

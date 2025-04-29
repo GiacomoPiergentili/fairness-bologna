@@ -1,4 +1,43 @@
+from scipy.special import softmax
 from probability_toolkit import *
+"""
+utils
+"""
+def get_path(door):
+    path = 'data/doors_flow_rates/'
+    match door:
+        case 'saragozza':
+            path+='varco-n-59-saragozza-direzione-centro.csv'
+        case 'san_isaia':
+            path+='varco-n-1-s-isaia-direzione-centro.csv'
+        case 'san_felice':
+            path+='varco-n-1059-san-felice-direzione-centro.csv'
+        case 'lame':
+            path+='varco-n-55-lame-direzione-centro.csv'
+        case 'galliera':
+            path+='varco-n-38-indipendenza-direzione-centro.csv'
+        case 'mascarella':
+            path+='varco-n-53-mascarella-direzione-sud.csv'
+        case 'san_donato':
+            path+='varco-n-65.csv'
+        case 'san_vitale':
+            path+='varco-n-2-s-vitale-direzione-centro.csv'
+        case 'santo_stefano':
+            path+='varco-n-45-pta-santo-stefano-direzione-centro.csv'
+        case 'castiglione':
+            path+='varco-n-7-viale-xii-giugno-direzione-centro.csv'
+    return path
+
+def get_probs(t, probs):
+    keys=probs.keys()
+    scaled_probs_dict = {key: probs[key] * get_time_probs(key, t) for key in keys}
+
+    # Estrai i valori nell'ordine corretto delle chiavi per la softmax
+    scaled_values = [scaled_probs_dict[key] for key in keys]
+
+    # Applica la softmax per far sommare le probabilità a 1
+    softmaxed_probs = softmax(scaled_values)
+    return scaled_probs_dict, {key:softmaxed_probs[_] for _,key in enumerate(keys)}
 
 def weight_function(age, weights, values):
     costo = 0

@@ -1,10 +1,12 @@
 import pandas as pd
 import numpy as np
-
 import matplotlib
 # matplotlib.use('Qt5Agg')  # oppure 'Qt5Agg', 'GTK3Agg' ecc.
 import matplotlib.pyplot as plt
-
+"""
+used to create the dataframe representing the amount of people crossing the door
+at each time of the day
+"""
 path = 'data/varco-n-59-saragozza-direzione-centro.csv'
 
 def plot_stats_intervalli(df_stats, interval_minutes):
