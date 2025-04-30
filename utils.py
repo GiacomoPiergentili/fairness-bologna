@@ -4,6 +4,10 @@ from probability_toolkit import *
 utils
 """
 def get_path(door):
+    """
+    Returns the relative file path to the CSV file containing flow rate data 
+    for a specified door.
+    """
     path = 'data/doors_flow_rates/'
     match door:
         case 'saragozza':
@@ -29,6 +33,19 @@ def get_path(door):
     return path
 
 def get_probs(t, probs):
+    """
+    used to obtain time-adjusted and normalized probabilities 
+    for a set of keys at a given time `t`.
+
+    Parameters:
+    - t: time reference (e.g., integer or datetime, depending on get_time_probs)
+    - probs: dictionary mapping each key (e.g., gate or option name) to a base probability
+
+    Returns:
+    - A tuple of two dictionaries:
+        1. Time-scaled (but unnormalized) probabilities
+        2. Normalized probabilities (softmaxed to sum to 1)
+    """
     keys=probs.keys()
     scaled_probs_dict = {key: probs[key] * get_time_probs(key, t) for key in keys}
 
@@ -40,6 +57,18 @@ def get_probs(t, probs):
     return scaled_probs_dict, {key:softmaxed_probs[_] for _,key in enumerate(keys)}
 
 def weight_function(age, weights, values):
+    """
+    Use this function to compute a weighted cost score for a given `age` group,
+    based on predefined weights and input values.
+
+    Parameters:
+    - age: key used to select the appropriate weight set from the `weights` dictionary
+    - weights: a nested dictionary of the form weights[age][key] = weight
+    - values: a dictionary with a 'vals' sub-dictionary mapping each key to a value
+
+    Returns:
+    - A float representing the total weighted cost, capped at MAX_VAL
+    """
     costo = 0
     for key in weights[age].keys():
         costo += min(1,max(weights[age][key]*values['vals'][key],0))
@@ -47,7 +76,15 @@ def weight_function(age, weights, values):
 
 def get_time_probs(key, t):
     """
-    per ogni categoria devo stimare la probabilità di attraversare la porta ad un certo orario
+    returns the time-dependent probability of a person 
+    in category `key` crossing a gate at time `t`.
+
+    Parameters:
+    - key: category of the person (e.g., "bambini", "ragazzi", "adulti", "adulte")
+    - t: time input used by the corresponding probability function
+
+    Returns:
+    - A float representing the probability for the given category at time `t`
     """
     match key:
         case "bambini":
