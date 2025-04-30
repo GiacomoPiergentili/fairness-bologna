@@ -77,6 +77,22 @@ def woman_prob(t):
     )
     return max(0.1,val) # L smoothing
 
+def family_prob(t):
+    val = (
+        ramp_val(0.7, 6,7.5,t)+\
+        const_val(0.7,7.5,8.5,t)+\
+        (const_val(0.7,8.5,9,t)-ramp_val(0.7, 8.5,9.1,t))+\
+
+        const_val(0.3,9,15,t)+\
+
+        ramp_val(0.7, 15,18,t)+\
+        const_val(0.7,18,20,t)+\
+        (const_val(0.7,20,21,t)-ramp_val(0.7, 20,21,t))
+
+        # const_val(0.3,15,20,t)
+    )
+    return max(0.1,val) # L smoothing
+
 def plot_probs():
     import numpy as np
     import matplotlib
@@ -93,6 +109,8 @@ def plot_probs():
         'man_prob':{'function':man_prob,
                          'data':[]},
         'woman_prob':{'function':woman_prob,
+                         'data':[]},
+        'fam':{'function':family_prob,
                          'data':[]}
     }
 

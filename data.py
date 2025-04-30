@@ -43,6 +43,15 @@ weights = {
     "scuole private": -1,
     "servizi": 1,
     "mobilita": -1,
+  },
+  "family": {
+    "costo ingresso": 0,
+    "aree verdi gratuite": 1,
+    "aree verdi pagamento": 1,
+    "scuole pubbliche": 1,
+    "scuole private": 1,
+    "servizi": 1,
+    "mobilita": 1,
   }
 }
 

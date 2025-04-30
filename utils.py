@@ -95,3 +95,5 @@ def get_time_probs(key, t):
             return man_prob(t)
         case "adulte":
             return woman_prob(t)
+        case "family":
+            return family_prob(t)
