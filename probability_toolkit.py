@@ -2,9 +2,9 @@
 used to create functions that represent the probility for
 a given category to be out at a certain hour.
 
-    EG. P(t|kid)
-        the probability to see a kid at 3AM is low P(3AM|kid) = 0
-        instead P(8AM|kid) > P(3AM|kid)
+    EG. P(kid=outside|t)
+        the probability to see a kid at 3AM is low P(kid=outside|3AM) = 0
+        instead P(kid=outside|8AM) > P(kid=outside|3AM)
 
 """
 MAX_VAL = 5
