@@ -1,12 +1,12 @@
 """
 data that will be used in the simulation
 
-weights -> represent how much a certain feature influence a certain category
-porte_data -> represent features for each door. this is used for the inzialization of our simulator and those are the value that will change in the simulation
+weights -> represent how much a certain feature influences a certain category
+porte_data -> represent features for each door. this is used for the inzialization of our simulator and those are the values that will change in the simulation
 
 """
 
-# the following is used as example and are not based on real data. its a toy example
+# the following is used as example and is not based on real data.
 weights = {
   "bambini": {
     "costo ingresso": 0,

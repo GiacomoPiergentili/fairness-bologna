@@ -1,3 +1,11 @@
+"""
+This script creates an interactive Streamlit dashboard to visualize Bologna
+geographical data (schools, parks, city gates) using Folium. It allows users
+to toggle map layers, adjust parameters like search radius, and view
+simulation results or details specific to a selected city gate ('Porta')
+clicked on the map.
+"""
+
 import streamlit as st
 import sys
 import os
@@ -18,7 +26,7 @@ st.set_page_config(layout="wide")
 st.title("Bologna Simulation Dashboard")
 
 # to be adjusted
-import data # qua deve venire caricato il json con le impostazioni
+import data
 
 door = None
 

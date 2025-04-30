@@ -1,3 +1,10 @@
+"""
+This script loads geographical data for Bologna (city gates, green areas, schools),
+processes coordinate information to create GeoDataFrames, and generates an
+interactive Folium map visualizing these locations with optional range circles.
+It also includes a function to find points within a specified radius.
+"""
+
 import pandas as pd
 import geopandas as gpd
 from shapely.geometry import Point
