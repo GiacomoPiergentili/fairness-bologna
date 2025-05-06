@@ -30,6 +30,11 @@ import data
 
 door = None
 
+if 'old_door' not in st.session_state:
+    st.session_state.old_door = None
+if 'effort_t0' not in st.session_state:
+    st.session_state.effort_t0 = {}
+
 # --- Create Columns for Layout ---
 col1, col2 = st.columns([3, 1]) # Main area takes 3/4, controls take 1/4
 
@@ -78,6 +83,7 @@ with col1:
 col3, col4 = st.columns(2)
 # --- Add a new row below the map with two columns ---
 # --- Add a new row below the map with two columns ---
+
 if door:
     # --- Define Sliders First (in col3) ---
     with col3:
@@ -134,6 +140,11 @@ if door:
     ts_data = get_stats_ts(df)
     # Calculations now use the values just set by the sliders in this run
     effort = {age_category: weight_function(age_category, data.weights, data.porte_data[door]) for age_category in data.weights.keys()}
+    
+    if st.session_state.old_door!=door:
+        st.session_state.effort_t0 = effort.copy()
+        st.session_state.old_door=door
+
     probs = {key: 1 - (effort[key] / MAX_VAL) for key in effort.keys()}
 
     keys = list(probs.keys())   # categories
@@ -161,7 +172,11 @@ if door:
     with col4:
         st.title(f"Simulation prediction")
         # tabellina carina carina
-        df_effort = pd.DataFrame(list(effort.items()), columns=["Category", "Effort"])
+        df_effort = pd.DataFrame(list(st.session_state.effort_t0.items()), columns=["Category", "Effort"])
+        df_effort.columns = ["Category", "Baseline effort"]
+        df_new = pd.DataFrame(list(effort.items()), columns=["Category", "Effort"])
+        df_effort['Current Effort'] = df_new['Effort']
+
         st.dataframe(df_effort, use_container_width=True)
 
         # Grafico Matplotlib
