@@ -177,7 +177,25 @@ if door:
         df_new = pd.DataFrame(list(effort.items()), columns=["Category", "Effort"])
         df_effort['Current Effort'] = df_new['Effort']
 
-        st.dataframe(df_effort, use_container_width=True)
+        # Round the numerical columns to three decimal places
+        df_effort['Baseline effort'] = df_effort['Baseline effort']
+        df_effort['Current Effort'] = df_effort['Current Effort']
+
+        def style_effort(df):
+            def color_effort(row):
+                if row['Current Effort'] < row['Baseline effort']:
+                    color = '#8FBC8F'
+                elif row['Current Effort'] > row['Baseline effort']:
+                    color = '#F08080'
+                else:
+                    return [None, None, None] # No color change
+                return [None, None, f'background-color: {color}'] # Apply to 'Current Effort' column only
+            return df.style.apply(color_effort, axis=1)
+        
+        st.dataframe(
+            style_effort(df_effort).format("{:.3f}", subset=['Baseline effort', 'Current Effort']), 
+            use_container_width=True
+        )
 
         # Grafico Matplotlib
         # IMPORTANT: Need to import matplotlib.pyplot as plt earlier in the file
@@ -209,3 +227,4 @@ if door:
 else:
     # Display a simple message below the map when no door is selected
     st.info("Click a 'Porta' marker on the map to view details and simulation.")
+
