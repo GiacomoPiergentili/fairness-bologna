@@ -104,13 +104,13 @@ def plot_probs():
     vals = {
         'children_prob':{'function':children_prob,
                          'data':[]},
-        'guys_prob':{'function':guys_prob,
+        'teens_prob':{'function':guys_prob,
                          'data':[]},
         'man_prob':{'function':man_prob,
                          'data':[]},
         'woman_prob':{'function':woman_prob,
                          'data':[]},
-        'fam':{'function':family_prob,
+        'family_prob':{'function':family_prob,
                          'data':[]}
     }
 
@@ -119,8 +119,8 @@ def plot_probs():
             vals[key]['data'].append(vals[key]['function'](t))
     
     n_plots=len(vals.keys())
-    fig, axes = plt.subplots(nrows=n_plots, figsize=(5, 4*n_plots), sharex=True)
-
+    fig, axes = plt.subplots(nrows=2, ncols=3, figsize=(5*3, 4*2), sharex=True)
+    axes=axes.flatten()
     for _,key in enumerate(vals.keys()):
         ax = axes[_]
         ax.plot(ts, vals[key]['data'])
