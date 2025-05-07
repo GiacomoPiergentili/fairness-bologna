@@ -1,8 +1,6 @@
 from scipy.special import softmax
 from probability_toolkit import *
-"""
-utils
-"""
+
 def get_path(door):
     """
     Returns the relative file path to the CSV file containing flow rate data 

@@ -152,6 +152,8 @@ porte_data = {
       "mobilita": -0.9,
     }
   },
+
+  # We commented out the following because they are missing traffic data
   # "maggiore": { # dati sul traffico mancanti
   #   "coords": (44.49020940327005, 11.356963780736049),
   #   "vals": {

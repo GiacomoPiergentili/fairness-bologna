@@ -62,7 +62,6 @@ with col1:
 
         map_data = st_folium(map_object, width=700, height=400)
 
-        # non è elegante ma è il modo più facile
         door = None
         if map_data and map_data["last_object_clicked"]:
             lat_click = map_data["last_object_clicked"]["lat"]
@@ -71,18 +70,15 @@ with col1:
                 lat, lon = porta["coords"]
                 if abs(lat_click - lat) < 0.0005 and abs(lon_click - lon) < 0.0005:
                     door = nome
-                    # st.text("{door}")
                     break
 
     except Exception as e:
-        # Display more detailed error in Streamlit
         st.error(f"An error occurred while generating the map:")
-        st.exception(e) # Shows the full traceback
+        st.exception(e)
 
-# Note: The "Dashboard execution finished" message will appear below col1
+
+# --- Add a new row below the map with two columns ---
 col3, col4 = st.columns(2)
-# --- Add a new row below the map with two columns ---
-# --- Add a new row below the map with two columns ---
 
 if door:
     # --- Define Sliders First (in col3) ---
@@ -130,6 +126,7 @@ if door:
                 value=default_value, # Set initial value from data
                 key=f"{door}_{key}" # Add unique key for persistence
             )
+
         # --- Important: Update the main data structure *after* all sliders are drawn ---
         # This ensures the data reflects the latest slider positions for the *next* part of the script
         data.porte_data[door]['vals'] = current_door_vals
@@ -138,7 +135,7 @@ if door:
     path = get_path(door)
     df = pd.read_csv(path, sep=';')
     ts_data = get_stats_ts(df)
-    # Calculations now use the values just set by the sliders in this run
+
     effort = {age_category: weight_function(age_category, data.weights, data.porte_data[door]) for age_category in data.weights.keys()}
     
     if st.session_state.old_door!=door:
@@ -162,7 +159,7 @@ if door:
     volumes_scaled = {key: [] for key in keys}
 
     for index, row in ts_data.iterrows():
-        t = (row['hour'] * 100 + row['minute_interval'] * 1.6779661017) / 100 # per convertire l'ora nel range 0..24
+        t = (row['hour'] * 100 + row['minute_interval'] * 1.6779661017) / 100 # to convert hours in range [0, 24]
         softmax_dict = get_probs(t, probs)[1]
         prob_vals = np.array(list(softmax_dict.values()))
         for _, key in enumerate(keys):
@@ -171,16 +168,12 @@ if door:
     # --- Display Results (in col4) ---
     with col4:
         st.title(f"Simulation prediction")
-        # tabellina carina carina
         df_effort = pd.DataFrame(list(st.session_state.effort_t0.items()), columns=["Category", "Effort"])
         df_effort.columns = ["Category", "Baseline effort"]
         df_new = pd.DataFrame(list(effort.items()), columns=["Category", "Effort"])
         df_effort['Current Effort'] = df_new['Effort']
 
-        # Round the numerical columns to three decimal places
-        df_effort['Baseline effort'] = df_effort['Baseline effort']
-        df_effort['Current Effort'] = df_effort['Current Effort']
-
+        # Apply color coding based on the difference between Baseline and Current Effort
         def style_effort(df):
             def color_effort(row):
                 if row['Current Effort'] < row['Baseline effort']:
@@ -192,13 +185,12 @@ if door:
                 return [None, None, f'background-color: {color}'] # Apply to 'Current Effort' column only
             return df.style.apply(color_effort, axis=1)
         
+        # Display the DataFrame with Streamlit applying the style and formatting the effort values to the 3rd decimal
         st.dataframe(
             style_effort(df_effort).format("{:.3f}", subset=['Baseline effort', 'Current Effort']), 
             use_container_width=True
         )
 
-        # Grafico Matplotlib
-        # IMPORTANT: Need to import matplotlib.pyplot as plt earlier in the file
         import matplotlib.pyplot as plt
         fig, ax = plt.subplots(figsize=(12, 7))  # Crea la figura
 
@@ -223,7 +215,8 @@ if door:
         ax.legend()
         plt.tight_layout()
 
-        st.pyplot(fig)  # Visualizza il grafico in Streamlit
+        # Display the plot in Streamlit
+        st.pyplot(fig)
 else:
     # Display a simple message below the map when no door is selected
     st.info("Click a 'Porta' marker on the map to view details and simulation.")
