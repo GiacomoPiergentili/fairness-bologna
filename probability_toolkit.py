@@ -93,10 +93,16 @@ def family_prob(t):
     )
     return max(0.1,val) # L smoothing
 
+def other_prob(t):
+    val = (
+        const_val(0.5, 0, 24, t)
+    )
+    return max(0,val) # L smoothing
+
 def plot_probs():
     import numpy as np
     import matplotlib
-    matplotlib.use('Qt5Agg')
+    # matplotlib.use('Qt5Agg')
     import matplotlib.pyplot as plt
 
     ts = np.linspace(0,24,num=100)
@@ -111,6 +117,8 @@ def plot_probs():
         'woman_prob':{'function':woman_prob,
                          'data':[]},
         'family_prob':{'function':family_prob,
+                         'data':[]},
+        'other_prob':{'function':other_prob,
                          'data':[]}
     }
 

@@ -36,16 +36,16 @@ if 'effort_t0' not in st.session_state:
     st.session_state.effort_t0 = {}
 
 # --- Create Columns for Layout ---
-col1, col2 = st.columns([3, 1]) # Main area takes 3/4, controls take 1/4
+col1, col2 = st.columns([3, 1])
 
 # --- Place Controls in the Right Column (col2) ---
 with col2:
-    st.title("Opzioni mappa") # Use st.title or st.header in the column
-    show_scuole_opt = st.checkbox("🔵 Mostra Scuole", value=True)
-    show_porte_opt = st.checkbox("🔴 Mostra Porte", value=True)
-    show_aree_verdi_opt = st.checkbox("🟢 Mostra Aree Verdi", value=True)
-    show_radius_opt = st.checkbox("⭕ Mostra Raggio di Azione", value=False)
-    choose_radius = st.slider("Raggio di azione", min_value=0, max_value=1000, value=650, step=25)
+    st.title("Map Options")
+    show_scuole_opt = st.checkbox("🔵 Show Schools", value=True)
+    show_porte_opt = st.checkbox("🔴 Show Porte", value=True)
+    show_aree_verdi_opt = st.checkbox("🟢 Show Green Areas", value=True)
+    show_radius_opt = st.checkbox("⭕ Show Action Radius", value=False)
+    choose_radius = st.slider("Action Radius", min_value=0, max_value=1000, value=650, step=25)
 
 
 # --- Place Map in the Left Column (col1) ---
@@ -83,7 +83,7 @@ col3, col4 = st.columns(2)
 if door:
     # --- Define Sliders First (in col3) ---
     with col3:
-        st.title(f"Door settings: {door}")
+        st.title(f"Gate settings: {door}")
 
         min_schools, max_schools = 30, 0
         min_parks, max_parks = 30, 0
@@ -99,44 +99,43 @@ if door:
 
         # Use a temporary dictionary to store slider values for this run
         current_door_vals = {}
-        for key in data.porte_data[door]['vals']:
+        for key in data.porte_data[door]['vals']: # Changed data.porte_data to data.porte_data
             # Read the current value from the data structure for the default
-            schools, parks = find_points_in_range(data.porte_data[door]["coords"][0], data.porte_data[door]["coords"][1], choose_radius)
-            if (key == 'aree verdi gratuite' or 
-                    key == 'aree verdi pagamento'):
+            schools, parks = find_points_in_range(data.porte_data[door]["coords"][0], data.porte_data[door]["coords"][1], choose_radius) # Changed data.porte_data to data.porte_data
+            if (key == 'free green areas' or
+                    key == 'paid green areas'):
                 default_value = ramp_val(2.0,
                                          min_parks,
                                          max_parks,
                                          len(parks)
                                     )-1.0
-            elif(key == 'scuole pubbliche' or 
-                    key == 'scuole private'):
+            elif(key == 'public schools' or
+                    key == 'private schools'):
                 default_value = ramp_val(2.0,
                                          min_schools,
                                          max_schools,
                                          len(schools)
                                     )-1.0
             else:
-                default_value = data.porte_data[door]['vals'][key]
+                default_value = data.porte_data[door]['vals'][key] # Changed data.porte_data to data.porte_data
             # Create the slider and store its *current* return value
             current_door_vals[key] = st.slider(
                 key,
                 min_value=-1.0,
                 max_value=1.0,
-                value=default_value, # Set initial value from data
+                value=default_value,
                 key=f"{door}_{key}" # Add unique key for persistence
             )
 
         # --- Important: Update the main data structure *after* all sliders are drawn ---
-        # This ensures the data reflects the latest slider positions for the *next* part of the script
-        data.porte_data[door]['vals'] = current_door_vals
+        data.porte_data[door]['vals'] = current_door_vals # Changed data.porte_data to data.porte_data
 
     # --- Perform Calculations Using Updated Values ---
     path = get_path(door)
     df = pd.read_csv(path, sep=';')
     ts_data = get_stats_ts(df)
 
-    effort = {age_category: weight_function(age_category, data.weights, data.porte_data[door]) for age_category in data.weights.keys()}
+    effort = {age_category: weight_function(age_category, data.weights, data.porte_data[door]) for age_category in data.weights.keys()} # Changed data.porte_data to data.porte_data
     
     if st.session_state.old_door!=door:
         st.session_state.effort_t0 = effort.copy()
@@ -144,7 +143,7 @@ if door:
 
     probs = {key: 1 - (effort[key] / MAX_VAL) for key in effort.keys()}
 
-    keys = list(probs.keys())   # categories
+    keys = list(probs.keys())
 
     prob_history = {key: [] for key in keys}
     prob_history_non_softmax = {key: [] for key in keys}
@@ -159,7 +158,7 @@ if door:
     volumes_scaled = {key: [] for key in keys}
 
     for index, row in ts_data.iterrows():
-        t = (row['hour'] * 100 + row['minute_interval'] * 1.6779661017) / 100 # to convert hours in range [0, 24]
+        t = (row['hour'] * 100 + row['minute_interval'] * 1.6779661017) / 100
         softmax_dict = get_probs(t, probs)[1]
         prob_vals = np.array(list(softmax_dict.values()))
         for _, key in enumerate(keys):
@@ -181,10 +180,10 @@ if door:
                 elif row['Current Effort'] > row['Baseline effort']:
                     color = '#F08080'
                 else:
-                    return [None, None, None] # No color change
-                return [None, None, f'background-color: {color}'] # Apply to 'Current Effort' column only
+                    return [None, None, None]
+                return [None, None, f'background-color: {color}']
             return df.style.apply(color_effort, axis=1)
-        
+
         # Display the DataFrame with Streamlit applying the style and formatting the effort values to the 3rd decimal
         st.dataframe(
             style_effort(df_effort).format("{:.3f}", subset=['Baseline effort', 'Current Effort']), 
@@ -192,7 +191,7 @@ if door:
         )
 
         import matplotlib.pyplot as plt
-        fig, ax = plt.subplots(figsize=(12, 7))  # Crea la figura
+        fig, ax = plt.subplots(figsize=(12, 7))
 
         for key in keys:
             ax.plot(volumes_scaled[key], label=key, linestyle='-')
@@ -200,12 +199,12 @@ if door:
         ax.plot(ts_data['mean'], label='flow rate of people', linestyle='dotted')
 
         # Adjust x-ticks for better readability if needed
-        tick_step = max(1, len(ts_data) // 10) # Show around 10 labels
+        tick_step = max(1, len(ts_data) // 10)
         ax.set_xticks(np.arange(0, len(ts_data), step=tick_step))
         ax.set_xticklabels(
             [ts_data['timeStr'][i] for i in np.arange(0, len(ts_data), step=tick_step)],
             rotation=45,
-            ha="right" # Align rotated labels better
+            ha="right"
         )
 
         ax.set_xlabel("Hour of Day")
@@ -219,5 +218,5 @@ if door:
         st.pyplot(fig)
 else:
     # Display a simple message below the map when no door is selected
-    st.info("Click a 'Porta' marker on the map to view details and simulation.")
+    st.info("Click a 'Gate' marker on the map to view details and simulation.")
 

@@ -85,13 +85,15 @@ def get_time_probs(key, t):
     - A float representing the probability for the given category at time `t`
     """
     match key:
-        case "bambini":
+        case "kids":
             return children_prob(t)
-        case "ragazzi":
+        case "teenagers":
             return guys_prob(t)
-        case "adulti":
+        case "men":
             return man_prob(t)
-        case "adulte":
+        case "women":
             return woman_prob(t)
         case "family":
             return family_prob(t)
+        case "others":
+            return other_prob(t)
